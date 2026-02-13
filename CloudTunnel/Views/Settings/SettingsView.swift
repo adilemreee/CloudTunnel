@@ -462,6 +462,7 @@ struct SettingsView: View {
             Divider()
             
             VStack(alignment: .leading, spacing: CTSpacing.sm) {
+                CTInfoRow(label: "Developer", value: "Adil Emre Karayürek")
                 CTInfoRow(label: "Platform", value: "macOS \(ProcessInfo.processInfo.operatingSystemVersionString)")
                 CTInfoRow(label: "Architecture", value: {
                     #if arch(arm64)
