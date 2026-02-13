@@ -129,12 +129,9 @@ final class PortScannerService: ObservableObject {
         scanProgress = 0
         discoveredPorts = []
         
-        let results = await withCheckedContinuation { (continuation: CheckedContinuation<[DiscoveredPort], Never>) in
-            Task.detached {
-                let ports = self.performLsofScan()
-                continuation.resume(returning: ports)
-            }
-        }
+        let results = await Task.detached(priority: .userInitiated) {
+            return Self.performLsofScan()
+        }.value
         
         discoveredPorts = results.sorted { $0.port < $1.port }
         isScanning = false
@@ -143,7 +140,7 @@ final class PortScannerService: ObservableObject {
     }
     
     // MARK: - lsof Scan
-    nonisolated private func performLsofScan() -> [DiscoveredPort] {
+    nonisolated private static func performLsofScan() -> [DiscoveredPort] {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/sbin/lsof")
         process.arguments = ["-iTCP", "-sTCP:LISTEN", "-n", "-P"]
@@ -198,7 +195,7 @@ final class PortScannerService: ObservableObject {
             let pid = Int32(pidStr) ?? 0
             
             // Get full command
-            let command = getProcessCommand(pid: pid)
+            let command = Self.getProcessCommand(pid: pid)
             
             results.append(DiscoveredPort(
                 port: port,
@@ -213,7 +210,7 @@ final class PortScannerService: ObservableObject {
         return results
     }
     
-    nonisolated private func getProcessCommand(pid: Int32) -> String {
+    nonisolated private static func getProcessCommand(pid: Int32) -> String {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/bin/ps")
         process.arguments = ["-p", "\(pid)", "-o", "command="]

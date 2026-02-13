@@ -18,10 +18,17 @@ struct QRCodeView: View {
     var activeTunnels: [(id: UUID, name: String, url: String)] {
         var results: [(id: UUID, name: String, url: String)] = []
         
-        // Managed tunnels with hostname
-        for tunnel in tunnelService.managedTunnels where tunnel.status == .running && !tunnel.hostname.isEmpty {
-            let url = "https://\(tunnel.hostname)"
-            results.append((tunnel.id, tunnel.displayName, url))
+        // Managed tunnels - running ones with hostname or config
+        for tunnel in tunnelService.managedTunnels where tunnel.status == .running {
+            if !tunnel.hostname.isEmpty {
+                let proto = tunnel.tunnelProtocol == .https ? "https" : "https"
+                let url = "\(proto)://\(tunnel.hostname)"
+                results.append((tunnel.id, tunnel.displayName, url))
+            } else {
+                // Include with localhost URL as fallback
+                let url = "http://localhost:\(tunnel.port)"
+                results.append((tunnel.id, tunnel.displayName, url))
+            }
         }
         
         // Quick tunnels with public URL
@@ -59,16 +66,39 @@ struct QRCodeView: View {
             .padding(CTSpacing.xl)
         }
         .background(CTColors.Surface.primary)
+        // Periodically refresh tunnel list
+        .onReceive(Timer.publish(every: 3, on: .main, in: .common).autoconnect()) { _ in
+            refreshSelection()
+        }
         .onChange(of: selectedTunnelID) { _, newID in
             if let newID, let tunnel = activeTunnels.first(where: { $0.id == newID }) {
                 qrURL = tunnel.url
                 generateQR()
             }
         }
+        .onChange(of: tunnelService.managedTunnels.count) { _, _ in
+            refreshSelection()
+        }
+        .onChange(of: tunnelService.quickTunnels.count) { _, _ in
+            refreshSelection()
+        }
         .onAppear {
-            if let first = activeTunnels.first {
-                selectedTunnelID = first.id
-                qrURL = first.url
+            refreshSelection()
+        }
+    }
+    
+    private func refreshSelection() {
+        let tunnels = activeTunnels
+        if tunnels.isEmpty {
+            selectedTunnelID = nil
+            if !useCustomURL { qrImage = nil }
+            return
+        }
+        // If no selection yet or current selection is gone, pick first
+        if selectedTunnelID == nil || !tunnels.contains(where: { $0.id == selectedTunnelID }) {
+            if !useCustomURL {
+                selectedTunnelID = tunnels.first?.id
+                qrURL = tunnels.first?.url ?? ""
                 generateQR()
             }
         }
