@@ -293,6 +293,7 @@ struct TunnelRow: View {
                                     .textFieldStyle(.roundedBorder)
                                     .font(CTTypography.monoSmall)
                                     .onAppear { dnsHostname = tunnel.hostname }
+                                    .onChange(of: tunnel.hostname) { _, new in dnsHostname = new }
                                 
                                 Button {
                                     routeDNS()
