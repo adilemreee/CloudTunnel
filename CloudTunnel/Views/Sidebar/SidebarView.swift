@@ -141,6 +141,17 @@ struct SidebarView: View {
             if dockerService.isDockerRunning {
                 badgeView("\(dockerService.runningContainers.count)", color: CTColors.info)
             }
+        case .liveLog:
+            if LiveLogService.shared.isStreaming {
+                HStack(spacing: 3) {
+                    Circle()
+                        .fill(CTColors.danger)
+                        .frame(width: 6, height: 6)
+                    Text("LIVE")
+                        .font(.system(size: 8, weight: .black))
+                        .foregroundStyle(CTColors.danger)
+                }
+            }
         case .history:
             if historyService.errorCount > 0 {
                 badgeView("\(historyService.errorCount)", color: CTColors.danger)

@@ -363,8 +363,9 @@ final class TunnelService: ObservableObject {
         }
         
         let outputPipe = Pipe()
+        let liveLogPipe = Pipe()
         process.standardOutput = outputPipe
-        process.standardError = outputPipe
+        process.standardError = liveLogPipe
         
         process.terminationHandler = { [weak self] proc in
             Task { @MainActor in
@@ -374,6 +375,7 @@ final class TunnelService: ObservableObject {
                     self.managedTunnels[idx].pid = nil
                 }
                 self.managedProcesses.removeValue(forKey: tunnel.id)
+                LiveLogService.shared.unregisterTunnel(tunnel.id)
                 HistoryService.shared.log(.info, .tunnel, "Tunnel '\(tunnel.name)' stopped (exit: \(proc.terminationStatus))")
             }
         }
@@ -386,6 +388,9 @@ final class TunnelService: ObservableObject {
             managedTunnels[index].lastStarted = Date()
             HistoryService.shared.log(.info, .tunnel, "Tunnel '\(tunnel.name)' started (PID: \(process.processIdentifier))")
             NotificationHelper.send(title: "Tünel Başlatıldı", body: "'\(tunnel.displayName)' başarıyla başlatıldı.", category: .tunnelStarted)
+            
+            // Register for live log streaming
+            LiveLogService.shared.registerPipe(liveLogPipe, tunnelID: tunnel.id, tunnelName: tunnel.displayName)
             
             // Read output in background
             readProcessOutput(outputPipe, tunnelName: tunnel.name)
@@ -407,6 +412,7 @@ final class TunnelService: ObservableObject {
             kill(pid, SIGTERM)
         }
         
+        LiveLogService.shared.unregisterTunnel(tunnel.id)
         managedTunnels[index].status = .stopped
         managedTunnels[index].pid = nil
         HistoryService.shared.log(.info, .tunnel, "Tunnel '\(tunnel.name)' stopped")
@@ -621,11 +627,13 @@ ingress:
         process.arguments = ["tunnel", "--url", localURL]
         
         let outputPipe = Pipe()
+        let liveLogPipe = Pipe()
         process.standardOutput = outputPipe
-        process.standardError = outputPipe
+        process.standardError = liveLogPipe
         
         process.terminationHandler = { [weak self] _ in
             Task { @MainActor in
+                LiveLogService.shared.unregisterTunnel(tunnel.id)
                 self?.quickTunnels.removeAll { $0.id == tunnel.id }
             }
         }
@@ -657,6 +665,9 @@ ingress:
                     }
                 }
             }
+            
+            // Register for live log streaming
+            LiveLogService.shared.registerPipe(liveLogPipe, tunnelID: tunnel.id, tunnelName: preset?.name ?? localURL)
             
             HistoryService.shared.log(.info, .tunnel, "Quick tunnel starting for \(localURL)")
             return tunnel

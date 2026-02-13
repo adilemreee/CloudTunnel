@@ -12,6 +12,7 @@ struct CloudTunnelApp: App {
     @StateObject private var networkService = NetworkService.shared
     @StateObject private var historyService = HistoryService.shared
     @StateObject private var backupService = BackupService.shared
+    @StateObject private var shortcutManager = KeyboardShortcutManager.shared
     
     var body: some Scene {
         WindowGroup {

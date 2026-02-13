@@ -21,6 +21,11 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .navigateToQuickTunnel)) { _ in
             selectedItem = .quickTunnel
         }
+        .onReceive(NotificationCenter.default.publisher(for: .navigateToItem)) { notification in
+            if let item = notification.object as? NavigationItem {
+                selectedItem = item
+            }
+        }
     }
     
     // MARK: - Detail View Router
@@ -33,12 +38,18 @@ struct ContentView: View {
             TunnelListView()
         case .quickTunnel:
             QuickTunnelView()
+        case .portScanner:
+            PortScannerView()
         case .docker:
             DockerView()
         case .mamp:
             MAMPView()
         case .fileShare:
             FileShareView()
+        case .liveLog:
+            LiveLogView()
+        case .qrCode:
+            QRCodeView()
         case .domainMigration:
             DomainMigrationView()
         case .teamSharing:

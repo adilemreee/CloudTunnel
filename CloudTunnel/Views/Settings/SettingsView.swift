@@ -12,7 +12,7 @@ struct SettingsView: View {
     @State private var selectedTab = SettingsTab.general
     
     enum SettingsTab: String, CaseIterable, Identifiable {
-        case general, paths, appearance, notifications, backup, advanced, about
+        case general, paths, appearance, notifications, shortcuts, backup, advanced, about
         
         var id: String { rawValue }
         
@@ -22,6 +22,7 @@ struct SettingsView: View {
             case .paths:         NSLocalizedString("settings.paths", comment: "")
             case .appearance:    NSLocalizedString("settings.appearance", comment: "")
             case .notifications: NSLocalizedString("settings.notifications", comment: "")
+            case .shortcuts:     "Kısayollar"
             case .backup:        NSLocalizedString("settings.backup", comment: "")
             case .advanced:      NSLocalizedString("settings.advanced", comment: "")
             case .about:         NSLocalizedString("settings.about", comment: "")
@@ -34,6 +35,7 @@ struct SettingsView: View {
             case .paths:         "folder"
             case .appearance:    "paintbrush"
             case .notifications: "bell"
+            case .shortcuts:     "keyboard"
             case .backup:        "externaldrive"
             case .advanced:      "wrench.and.screwdriver"
             case .about:         "info.circle"
@@ -84,6 +86,7 @@ struct SettingsView: View {
                     case .paths:         pathsTab
                     case .appearance:    appearanceTab
                     case .notifications: notificationsTab
+                    case .shortcuts:     KeyboardShortcutsView()
                     case .backup:        backupTab
                     case .advanced:      advancedTab
                     case .about:         aboutTab

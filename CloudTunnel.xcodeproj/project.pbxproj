@@ -37,6 +37,14 @@
 		EC097017EBF6F4D9F676B64C /* TeamSharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C680F08450EBC1CD48C77DE /* TeamSharingService.swift */; };
 		F24333853D4B13DF2D26AC9E /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B25D553228914734846E6FF /* DesignSystem.swift */; };
 		FC1F201FBA8DC963FB08D6B0 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD317D0694DDE82333B5140 /* DashboardView.swift */; };
+		F3F830EBBF12D5D862FF2AEE /* QRCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0B33217E99EE0AB56FA1AB /* QRCodeService.swift */; };
+		0144F297A6A1E2AEACFF72D5 /* LiveLogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55A77D380128340E77E6A3A /* LiveLogService.swift */; };
+		A5AA1F49341F3BE287499CC2 /* PortScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC852118537A6068108A378 /* PortScannerService.swift */; };
+		EEF452445E57AF860C8B74B9 /* KeyboardShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C35FB9177BE7846F579E57 /* KeyboardShortcutManager.swift */; };
+		DDE7694143040B7DB4CB11A8 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9153E02410F64E440C7D6685 /* QRCodeView.swift */; };
+		542210361FCAA6226449FA31 /* LiveLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82A2FD8211A8C33F7190469 /* LiveLogView.swift */; };
+		6E670E348BA75C7C907258D2 /* PortScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC9BED30C73A62BADA71C15 /* PortScannerView.swift */; };
+		637202FD9CF7C7C370034F12 /* KeyboardShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57597F10242C4BBAC758A67D /* KeyboardShortcutsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +82,14 @@
 		F994E158923BD20CECD4F169 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA84AE2166C18A35AEDF3315 /* DockerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerView.swift; sourceTree = "<group>"; };
 		FEC2919D90A3AD30C4E9CECF /* CreateTunnelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTunnelView.swift; sourceTree = "<group>"; };
+		BF0B33217E99EE0AB56FA1AB /* QRCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeService.swift; sourceTree = "<group>"; };
+		E55A77D380128340E77E6A3A /* LiveLogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveLogService.swift; sourceTree = "<group>"; };
+		BDC852118537A6068108A378 /* PortScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortScannerService.swift; sourceTree = "<group>"; };
+		B2C35FB9177BE7846F579E57 /* KeyboardShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutManager.swift; sourceTree = "<group>"; };
+		9153E02410F64E440C7D6685 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		C82A2FD8211A8C33F7190469 /* LiveLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveLogView.swift; sourceTree = "<group>"; };
+		9CC9BED30C73A62BADA71C15 /* PortScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortScannerView.swift; sourceTree = "<group>"; };
+		57597F10242C4BBAC758A67D /* KeyboardShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -130,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F994E158923BD20CECD4F169 /* SettingsView.swift */,
+				57597F10242C4BBAC758A67D /* KeyboardShortcutsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -149,6 +166,9 @@
 				430735116B5DBCDA9714C25A /* TeamSharing */,
 				2734DA59041FC18C7B7EB91C /* Tunnels */,
 				3ABE6029537B1FA4610E04F5 /* ContentView.swift */,
+				9673733010C765DB2F8D9D04 /* QRCode */,
+				A209FA045D53E4673B267703 /* LiveLog */,
+				9EFC352EDB29E354081A8BD6 /* PortScanner */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +186,7 @@
 			children = (
 				1B25D553228914734846E6FF /* DesignSystem.swift */,
 				2561348F4A44B98FC123FAF4 /* TouchBarController.swift */,
+				B2C35FB9177BE7846F579E57 /* KeyboardShortcutManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -232,6 +253,9 @@
 				F7E5BF808EB674E628620DCA /* PortService.swift */,
 				5C680F08450EBC1CD48C77DE /* TeamSharingService.swift */,
 				D8A2FD7FE2A83209F72FE214 /* TunnelService.swift */,
+				BF0B33217E99EE0AB56FA1AB /* QRCodeService.swift */,
+				E55A77D380128340E77E6A3A /* LiveLogService.swift */,
+				BDC852118537A6068108A378 /* PortScannerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -266,6 +290,30 @@
 				CCD4E039FB5EA6005AD0423C /* Models.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9673733010C765DB2F8D9D04 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				9153E02410F64E440C7D6685 /* QRCodeView.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		A209FA045D53E4673B267703 /* LiveLog */ = {
+			isa = PBXGroup;
+			children = (
+				C82A2FD8211A8C33F7190469 /* LiveLogView.swift */,
+			);
+			path = LiveLog;
+			sourceTree = "<group>";
+		};
+		9EFC352EDB29E354081A8BD6 /* PortScanner */ = {
+			isa = PBXGroup;
+			children = (
+				9CC9BED30C73A62BADA71C15 /* PortScannerView.swift */,
+			);
+			path = PortScanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +417,14 @@
 				0FA035ADBDB4BBBB3A101DD4 /* TouchBarController.swift in Sources */,
 				9CB957F258B727C1CB70AB6F /* TunnelListView.swift in Sources */,
 				12A508FA1D456E3A16641AE0 /* TunnelService.swift in Sources */,
+				F3F830EBBF12D5D862FF2AEE /* QRCodeService.swift in Sources */,
+				0144F297A6A1E2AEACFF72D5 /* LiveLogService.swift in Sources */,
+				A5AA1F49341F3BE287499CC2 /* PortScannerService.swift in Sources */,
+				EEF452445E57AF860C8B74B9 /* KeyboardShortcutManager.swift in Sources */,
+				DDE7694143040B7DB4CB11A8 /* QRCodeView.swift in Sources */,
+				542210361FCAA6226449FA31 /* LiveLogView.swift in Sources */,
+				6E670E348BA75C7C907258D2 /* PortScannerView.swift in Sources */,
+				637202FD9CF7C7C370034F12 /* KeyboardShortcutsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

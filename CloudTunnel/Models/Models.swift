@@ -331,9 +331,12 @@ enum NavigationItem: String, CaseIterable, Identifiable {
     case dashboard
     case tunnels
     case quickTunnel
+    case portScanner
     case docker
     case mamp
     case fileShare
+    case liveLog
+    case qrCode
     case teamSharing
     case domainMigration
     case history
@@ -346,9 +349,12 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .dashboard:       NSLocalizedString("nav.dashboard", comment: "")
         case .tunnels:         NSLocalizedString("nav.tunnels", comment: "")
         case .quickTunnel:     NSLocalizedString("nav.quickTunnel", comment: "")
+        case .portScanner:     "Port Tarayıcı"
         case .docker:          NSLocalizedString("nav.docker", comment: "")
         case .mamp:            NSLocalizedString("nav.mamp", comment: "")
         case .fileShare:       NSLocalizedString("nav.fileShare", comment: "")
+        case .liveLog:         "Canlı Loglar"
+        case .qrCode:          "QR Kod"
         case .teamSharing:     "Takım Paylaşımı"
         case .domainMigration: "Domain Yönetimi"
         case .history:         NSLocalizedString("nav.history", comment: "")
@@ -361,9 +367,12 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .dashboard:       "square.grid.2x2"
         case .tunnels:         "point.3.connected.trianglepath.dotted"
         case .quickTunnel:     "bolt.horizontal"
+        case .portScanner:     "antenna.radiowaves.left.and.right"
         case .docker:          "shippingbox"
         case .mamp:            "server.rack"
         case .fileShare:       "folder.badge.person.crop"
+        case .liveLog:         "terminal"
+        case .qrCode:          "qrcode"
         case .teamSharing:     "person.3"
         case .domainMigration: "arrow.triangle.2.circlepath"
         case .history:         "clock.arrow.circlepath"
@@ -374,21 +383,21 @@ enum NavigationItem: String, CaseIterable, Identifiable {
     var section: NavigationSection {
         switch self {
         case .dashboard:   .main
-        case .tunnels, .quickTunnel: .tunnels
+        case .tunnels, .quickTunnel, .portScanner: .tunnels
         case .docker, .mamp, .fileShare: .services
-        case .teamSharing, .domainMigration, .history, .settings: .system
+        case .liveLog, .qrCode, .teamSharing, .domainMigration, .history, .settings: .tools
         }
     }
     
     enum NavigationSection: String, CaseIterable {
-        case main, tunnels, services, system
+        case main, tunnels, services, tools
         
         var title: String {
             switch self {
             case .main:     ""
             case .tunnels:  NSLocalizedString("section.tunnels", comment: "")
             case .services: NSLocalizedString("section.services", comment: "")
-            case .system:   NSLocalizedString("section.system", comment: "")
+            case .tools:    "Araçlar & Sistem"
             }
         }
     }
