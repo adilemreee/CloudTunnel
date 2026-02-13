@@ -280,7 +280,8 @@ final class TunnelService: ObservableObject {
     
     // MARK: - YAML Parsing Helpers
     nonisolated private func parseYAMLValue(_ content: String, key: String) -> String? {
-        let pattern = #"(?m)^\s*"# + key + #"\s*:\s*(.+)$"#
+        // Support both top-level keys and YAML list items (e.g. "  - hostname: value" in ingress blocks)
+        let pattern = #"(?m)^\s*(?:-\s*)?"# + key + #"\s*:\s*(.+)$"#
         guard let range = content.range(of: pattern, options: .regularExpression) else { return nil }
         let match = content[range]
         let parts = match.split(separator: ":", maxSplits: 1)
