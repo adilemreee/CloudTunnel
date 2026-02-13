@@ -18,20 +18,15 @@ struct QRCodeView: View {
     var activeTunnels: [(id: UUID, name: String, url: String)] {
         var results: [(id: UUID, name: String, url: String)] = []
         
-        // Managed tunnels - running ones with hostname or config
+        // Managed tunnels - only include ones with a real domain hostname
         for tunnel in tunnelService.managedTunnels where tunnel.status == .running {
             if !tunnel.hostname.isEmpty {
-                let proto = tunnel.tunnelProtocol == .https ? "https" : "https"
-                let url = "\(proto)://\(tunnel.hostname)"
-                results.append((tunnel.id, tunnel.displayName, url))
-            } else {
-                // Include with localhost URL as fallback
-                let url = "http://localhost:\(tunnel.port)"
+                let url = "https://\(tunnel.hostname)"
                 results.append((tunnel.id, tunnel.displayName, url))
             }
         }
         
-        // Quick tunnels with public URL
+        // Quick tunnels with public URL (trycloudflare.com domains)
         for tunnel in tunnelService.quickTunnels where tunnel.status == .running {
             if let publicURL = tunnel.publicURL {
                 results.append((tunnel.id, tunnel.displayName, publicURL))
