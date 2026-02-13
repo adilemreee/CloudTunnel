@@ -1,0 +1,34 @@
+name: CloudTunnel
+options:
+  bundleIdPrefix: com.adilemre
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  CloudTunnel:
+    type: application
+    platform: macOS
+    sources:
+      - CloudTunnel
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.adilemre.CloudTunnel
+        INFOPLIST_FILE: CloudTunnel/Info.plist
+        CODE_SIGN_ENTITLEMENTS: CloudTunnel/CloudTunnel.entitlements
+        PRODUCT_NAME: CloudTunnel
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        COMBINE_HIDPI_IMAGES: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor

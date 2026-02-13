@@ -1,0 +1,179 @@
+/* Navigation */
+"nav.dashboard" = "Kontrol Paneli";
+"nav.tunnels" = "Tüneller";
+"nav.quickTunnel" = "Hızlı Tünel";
+"nav.docker" = "Docker";
+"nav.mamp" = "MAMP";
+"nav.fileShare" = "Dosya Paylaşımı";
+"nav.history" = "Geçmiş";
+"nav.settings" = "Ayarlar";
+
+/* Sections */
+"section.tunnels" = "Tüneller";
+"section.services" = "Servisler";
+"section.system" = "Sistem";
+
+/* Status */
+"status.running" = "Çalışıyor";
+"status.stopped" = "Durduruldu";
+"status.starting" = "Başlatılıyor";
+"status.stopping" = "Durduruluyor";
+"status.error" = "Hata";
+
+/* Dashboard */
+"dashboard.title" = "Kontrol Paneli";
+"dashboard.subtitle" = "Tünel ve servislerinize genel bakış";
+"dashboard.environment" = "Ortam";
+"dashboard.quickActions" = "Hızlı İşlemler";
+"dashboard.activeTunnels" = "Aktif Tüneller";
+"dashboard.running" = "çalışıyor";
+"dashboard.recentActivity" = "Son Aktiviteler";
+"dashboard.today" = "bugün";
+"dashboard.noActivity" = "Henüz aktivite yok";
+"dashboard.network" = "Ağ";
+"dashboard.fileShare" = "Dosya Paylaşımı";
+
+/* Stats */
+"stats.managed" = "Yönetilen";
+"stats.quick" = "Hızlı";
+"stats.active" = "aktif";
+"stats.temporary" = "geçici";
+"stats.total" = "toplam";
+"stats.errors" = "Hatalar";
+"stats.needsAttention" = "dikkat gerekiyor";
+
+/* Actions */
+"action.startAll" = "Tümünü Başlat";
+"action.stopAll" = "Tümünü Durdur";
+"action.rescan" = "Yeniden Tara";
+"action.refreshDocker" = "Docker Yenile";
+"action.startMAMP" = "MAMP Başlat";
+"action.stopMAMP" = "MAMP Durdur";
+
+/* Tunnels */
+"tunnels.title" = "Yönetilen Tüneller";
+"tunnels.count" = "tünel";
+"tunnels.create" = "Tünel Oluştur";
+"tunnels.search" = "Tünel ara...";
+"tunnels.empty.title" = "Tünel Yok";
+"tunnels.empty.message" = "Yerel bir servisi Cloudflare üzerinden internete açmak için ilk tünelizi oluşturun.";
+"tunnels.delete.title" = "Tüneli Sil";
+"tunnels.delete.message" = "Bu işlem tüneli ve yapılandırma dosyasını kalıcı olarak silecektir. Bu işlem geri alınamaz.";
+
+/* Create */
+"create.title" = "Tünel Oluştur";
+"create.subtitle" = "Yeni bir yönetilen Cloudflare tüneli yapılandırın";
+"create.protocol" = "Protokol";
+"create.name" = "Tünel Adı";
+"create.hostname" = "Alan Adı";
+"create.hostnameHint" = "Yerel servisinize yönlendirilecek genel alan adı";
+"create.port" = "Port";
+"create.summary" = "Özet";
+"create.button" = "Tünel Oluştur";
+
+/* Quick Tunnel */
+"quick.title" = "Hızlı Tünel";
+"quick.subtitle" = "*.trycloudflare.com URL'i ile geçici bir tünel başlatın";
+"quick.presets" = "Framework Şablonları";
+"quick.customURL" = "Özel URL";
+"quick.start" = "Tüneli Başlat";
+"quick.active" = "Aktif Hızlı Tüneller";
+"quick.activeCount" = "tünel";
+
+/* Docker */
+"docker.notInstalled.title" = "Docker Kurulu Değil";
+"docker.notInstalled.message" = "Konteynerları yönetmek ve onlardan tünel oluşturmak için Docker Desktop kurun.";
+"docker.notRunning.title" = "Docker Çalışmıyor";
+"docker.notRunning.message" = "Konteynerlarınızı görmek için Docker Desktop'ı başlatın.";
+"docker.noContainers.title" = "Konteyner Yok";
+"docker.noContainers.message" = "Tünel oluşturmak için Docker konteynerleri başlatın.";
+"docker.refresh" = "Yenile";
+"docker.selectContainer" = "Detayları görmek için bir konteyner seçin";
+"docker.createTunnel" = "Tünel Oluştur";
+
+/* MAMP */
+"mamp.notInstalled.title" = "MAMP Kurulu Değil";
+"mamp.notInstalled.message" = "Yerel web geliştirme sitelerini yönetmek için MAMP kurun.";
+"mamp.sitesCount" = "site";
+"mamp.scan" = "Tara";
+"mamp.start" = "MAMP Başlat";
+"mamp.stop" = "MAMP Durdur";
+"mamp.running" = "Çalışıyor";
+"mamp.stopped" = "Durduruldu";
+"mamp.sites" = "Siteler";
+"mamp.yourSites" = "Siteleriniz";
+"mamp.tools" = "Araçlar";
+"mamp.fixMySQL" = "MySQL Socket Düzelt";
+"mamp.fixMySQLDesc" = "MySQL socket için sembolik bağlantılar oluştur";
+"mamp.fixPhpMyAdmin" = "phpMyAdmin Düzelt";
+"mamp.fixPhpMyAdminDesc" = "Yapılandırmada localhost'u 127.0.0.1 olarak değiştir";
+"mamp.refreshStatus" = "Durumu Yenile";
+"mamp.refreshStatusDesc" = "MAMP sunucu durumunu kontrol et ve siteleri yeniden tara";
+
+/* File Share */
+"fileShare.title" = "Dosya Paylaşımı";
+"fileShare.subtitle" = "Bir klasörü Cloudflare Tunnel üzerinden herkese açık paylaşın";
+"fileShare.active" = "Paylaşım Aktif";
+"fileShare.stop" = "Paylaşımı Durdur";
+"fileShare.localURL" = "Yerel";
+"fileShare.publicURL" = "Genel";
+"fileShare.waitingURL" = "Genel URL oluşturuluyor...";
+"fileShare.selectFolder" = "Klasör Seç";
+"fileShare.selectFolder.message" = "Paylaşmak için bir klasör seçin";
+"fileShare.dropzone.title" = "Buraya bir klasör sürükleyin";
+"fileShare.dropzone.subtitle" = "veya aşağıdaki düğmeye tıklayarak seçin";
+"fileShare.howItWorks" = "Nasıl Çalışır";
+"fileShare.step1.title" = "Klasör Seç";
+"fileShare.step1.desc" = "Mac'inizden bir klasör seçin";
+"fileShare.step2.title" = "Yerel Sunucu";
+"fileShare.step2.desc" = "Yerel bir HTTP sunucusu başlatılır";
+"fileShare.step3.title" = "Genel URL";
+"fileShare.step3.desc" = "Cloudflare tüneli genel bir bağlantı oluşturur";
+
+/* History */
+"history.title" = "Geçmiş";
+"history.entries" = "kayıt";
+"history.export" = "Dışa Aktar";
+"history.clear" = "Tümünü Temizle";
+"history.search" = "Kayıtlarda ara...";
+"history.empty.title" = "Kayıt Yok";
+"history.empty.message" = "Uygulamayı kullandıkça aktivite kayıtları burada görünecektir.";
+
+/* Filter */
+"filter.all" = "Tümü";
+"filter.level" = "Seviye";
+"filter.category" = "Kategori";
+
+/* Settings */
+"settings.general" = "Genel";
+"settings.paths" = "Yollar";
+"settings.appearance" = "Görünüm";
+"settings.notifications" = "Bildirimler";
+"settings.backup" = "Yedekleme";
+"settings.advanced" = "Gelişmiş";
+"settings.about" = "Hakkında";
+"settings.autoStart" = "Otomatik Başlatma";
+"settings.autoStartTunnels" = "Açılışta tünelleri otomatik başlat";
+"settings.autoStartMAMP" = "Açılışta MAMP'ı otomatik başlat";
+"settings.checkInterval" = "Durum Kontrol Aralığı";
+"settings.accentColor" = "Vurgu Rengi";
+"settings.notifSettings" = "Bildirim Ayarları";
+"settings.enableNotif" = "Bildirimleri Etkinleştir";
+"settings.notifStart" = "Tünel başladığında bildir";
+"settings.notifStop" = "Tünel durduğunda bildir";
+"settings.notifError" = "Hatalarda bildir";
+"settings.backupActions" = "Yedekleme İşlemleri";
+"settings.dangerZone" = "Tehlikeli Bölge";
+"settings.clearLogs" = "Tüm Kayıtları Temizle";
+
+/* Backup */
+"backup.create" = "Yedek Oluştur";
+"backup.import" = "İçe Aktar";
+"backup.auto" = "Otomatik Yedekleme";
+"backup.list" = "Kayıtlı Yedekler";
+
+/* Common */
+"common.cancel" = "İptal";
+"common.delete" = "Sil";
+"common.save" = "Kaydet";
+"common.done" = "Tamam";

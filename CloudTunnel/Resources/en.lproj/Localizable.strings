@@ -1,0 +1,179 @@
+/* Navigation */
+"nav.dashboard" = "Dashboard";
+"nav.tunnels" = "Tunnels";
+"nav.quickTunnel" = "Quick Tunnel";
+"nav.docker" = "Docker";
+"nav.mamp" = "MAMP";
+"nav.fileShare" = "File Share";
+"nav.history" = "History";
+"nav.settings" = "Settings";
+
+/* Sections */
+"section.tunnels" = "Tunnels";
+"section.services" = "Services";
+"section.system" = "System";
+
+/* Status */
+"status.running" = "Running";
+"status.stopped" = "Stopped";
+"status.starting" = "Starting";
+"status.stopping" = "Stopping";
+"status.error" = "Error";
+
+/* Dashboard */
+"dashboard.title" = "Dashboard";
+"dashboard.subtitle" = "Overview of your tunnels and services";
+"dashboard.environment" = "Environment";
+"dashboard.quickActions" = "Quick Actions";
+"dashboard.activeTunnels" = "Active Tunnels";
+"dashboard.running" = "running";
+"dashboard.recentActivity" = "Recent Activity";
+"dashboard.today" = "today";
+"dashboard.noActivity" = "No activity yet";
+"dashboard.network" = "Network";
+"dashboard.fileShare" = "File Share";
+
+/* Stats */
+"stats.managed" = "Managed";
+"stats.quick" = "Quick";
+"stats.active" = "active";
+"stats.temporary" = "temporary";
+"stats.total" = "total";
+"stats.errors" = "Errors";
+"stats.needsAttention" = "needs attention";
+
+/* Actions */
+"action.startAll" = "Start All";
+"action.stopAll" = "Stop All";
+"action.rescan" = "Rescan";
+"action.refreshDocker" = "Refresh Docker";
+"action.startMAMP" = "Start MAMP";
+"action.stopMAMP" = "Stop MAMP";
+
+/* Tunnels */
+"tunnels.title" = "Managed Tunnels";
+"tunnels.count" = "tunnels";
+"tunnels.create" = "Create Tunnel";
+"tunnels.search" = "Search tunnels...";
+"tunnels.empty.title" = "No Tunnels";
+"tunnels.empty.message" = "Create your first tunnel to expose a local service to the internet via Cloudflare.";
+"tunnels.delete.title" = "Delete Tunnel";
+"tunnels.delete.message" = "This will permanently delete the tunnel and its configuration file. This action cannot be undone.";
+
+/* Create */
+"create.title" = "Create Tunnel";
+"create.subtitle" = "Configure a new managed Cloudflare tunnel";
+"create.protocol" = "Protocol";
+"create.name" = "Tunnel Name";
+"create.hostname" = "Hostname";
+"create.hostnameHint" = "The public domain that will route to your local service";
+"create.port" = "Port";
+"create.summary" = "Summary";
+"create.button" = "Create Tunnel";
+
+/* Quick Tunnel */
+"quick.title" = "Quick Tunnel";
+"quick.subtitle" = "Start a temporary tunnel with a *.trycloudflare.com URL";
+"quick.presets" = "Framework Presets";
+"quick.customURL" = "Custom URL";
+"quick.start" = "Start Tunnel";
+"quick.active" = "Active Quick Tunnels";
+"quick.activeCount" = "tunnels";
+
+/* Docker */
+"docker.notInstalled.title" = "Docker Not Installed";
+"docker.notInstalled.message" = "Install Docker Desktop to manage containers and create tunnels from them.";
+"docker.notRunning.title" = "Docker Not Running";
+"docker.notRunning.message" = "Start Docker Desktop to see your containers.";
+"docker.noContainers.title" = "No Containers";
+"docker.noContainers.message" = "Start some Docker containers to create tunnels from them.";
+"docker.refresh" = "Refresh";
+"docker.selectContainer" = "Select a container to view details";
+"docker.createTunnel" = "Create Tunnel";
+
+/* MAMP */
+"mamp.notInstalled.title" = "MAMP Not Installed";
+"mamp.notInstalled.message" = "Install MAMP to manage local web development sites.";
+"mamp.sitesCount" = "sites";
+"mamp.scan" = "Scan";
+"mamp.start" = "Start MAMP";
+"mamp.stop" = "Stop MAMP";
+"mamp.running" = "Running";
+"mamp.stopped" = "Stopped";
+"mamp.sites" = "Sites";
+"mamp.yourSites" = "Your Sites";
+"mamp.tools" = "Tools";
+"mamp.fixMySQL" = "Fix MySQL Socket";
+"mamp.fixMySQLDesc" = "Create symbolic links for MySQL socket";
+"mamp.fixPhpMyAdmin" = "Fix phpMyAdmin";
+"mamp.fixPhpMyAdminDesc" = "Change localhost to 127.0.0.1 in config";
+"mamp.refreshStatus" = "Refresh Status";
+"mamp.refreshStatusDesc" = "Check MAMP server status and rescan sites";
+
+/* File Share */
+"fileShare.title" = "File Share";
+"fileShare.subtitle" = "Share a folder publicly via Cloudflare Tunnel";
+"fileShare.active" = "Sharing Active";
+"fileShare.stop" = "Stop Sharing";
+"fileShare.localURL" = "Local";
+"fileShare.publicURL" = "Public";
+"fileShare.waitingURL" = "Generating public URL...";
+"fileShare.selectFolder" = "Select Folder";
+"fileShare.selectFolder.message" = "Choose a folder to share";
+"fileShare.dropzone.title" = "Drop a folder here";
+"fileShare.dropzone.subtitle" = "or click the button below to select one";
+"fileShare.howItWorks" = "How It Works";
+"fileShare.step1.title" = "Select Folder";
+"fileShare.step1.desc" = "Choose a folder from your Mac";
+"fileShare.step2.title" = "Local Server";
+"fileShare.step2.desc" = "A local HTTP server is started";
+"fileShare.step3.title" = "Public URL";
+"fileShare.step3.desc" = "A Cloudflare tunnel creates a public link";
+
+/* History */
+"history.title" = "History";
+"history.entries" = "entries";
+"history.export" = "Export";
+"history.clear" = "Clear All";
+"history.search" = "Search logs...";
+"history.empty.title" = "No Logs";
+"history.empty.message" = "Activity logs will appear here as you use the app.";
+
+/* Filter */
+"filter.all" = "All";
+"filter.level" = "Level";
+"filter.category" = "Category";
+
+/* Settings */
+"settings.general" = "General";
+"settings.paths" = "Paths";
+"settings.appearance" = "Appearance";
+"settings.notifications" = "Notifications";
+"settings.backup" = "Backup";
+"settings.advanced" = "Advanced";
+"settings.about" = "About";
+"settings.autoStart" = "Auto Start";
+"settings.autoStartTunnels" = "Auto-start tunnels on launch";
+"settings.autoStartMAMP" = "Auto-start MAMP on launch";
+"settings.checkInterval" = "Status Check Interval";
+"settings.accentColor" = "Accent Color";
+"settings.notifSettings" = "Notification Settings";
+"settings.enableNotif" = "Enable Notifications";
+"settings.notifStart" = "Notify on tunnel start";
+"settings.notifStop" = "Notify on tunnel stop";
+"settings.notifError" = "Notify on errors";
+"settings.backupActions" = "Backup Actions";
+"settings.dangerZone" = "Danger Zone";
+"settings.clearLogs" = "Clear All Logs";
+
+/* Backup */
+"backup.create" = "Create Backup";
+"backup.import" = "Import";
+"backup.auto" = "Automatic Backups";
+"backup.list" = "Saved Backups";
+
+/* Common */
+"common.cancel" = "Cancel";
+"common.delete" = "Delete";
+"common.save" = "Save";
+"common.done" = "Done";

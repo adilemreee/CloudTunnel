@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12A508FA1D456E3A16641AE0 /* TunnelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2FD7FE2A83209F72FE214 /* TunnelService.swift */; };
+		17D88A3ACA39F74BCC41B294 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD461DD6E8179DBD20883AE /* HistoryView.swift */; };
+		1FE45F761E90CA445BEEDF48 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CA9018C77040ACF6811A5 /* NetworkService.swift */; };
+		2AE4524930C55709FA843D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843DDFD676680EB50C2D92FA /* Assets.xcassets */; };
+		2E697796D10F80912F59DE48 /* FileShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6553D3584B9A277A4A0235D7 /* FileShareView.swift */; };
+		31C7F69085F326A62D285613 /* DockerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAEE5B0AF4C02D5BB49F934 /* DockerService.swift */; };
+		3AE2E9F9FDC60371E29EBEDB /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C5CA064A78FB7134F65677 /* BackupService.swift */; };
+		5862C61F7398FD38367EA0AA /* QuickTunnelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47723C78999A199F2ADBE7 /* QuickTunnelView.swift */; };
+		6B25A26C473AE824756AB40A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 473049950E7E7DFC1758BC15 /* Localizable.strings */; };
+		6F9DF0A2C1E4DA15AF1365AD /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39607BAB5979638986B6237 /* SidebarView.swift */; };
+		7CB4F275288E0AE4A23FB556 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952DAD1DA4178A978E6CC6E /* HistoryService.swift */; };
+		8D33432E5BD1C9AEE9A63F40 /* CreateTunnelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC2919D90A3AD30C4E9CECF /* CreateTunnelView.swift */; };
+		9AC2D6B8BDF297EA537F30F1 /* MAMPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77D662DDCC1B9BDA754CD98 /* MAMPService.swift */; };
+		9CB957F258B727C1CB70AB6F /* TunnelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F39723EC31F31C07069536B /* TunnelListView.swift */; };
+		A1C977714D5720CD282A752C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE6029537B1FA4610E04F5 /* ContentView.swift */; };
+		A3CDCB4FD4CC0453A2B2698E /* PortService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5BF808EB674E628620DCA /* PortService.swift */; };
+		AA723337ADFBABDA66221DEC /* MAMPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0524F073C4D369B94D8CF6 /* MAMPView.swift */; };
+		B0FB4C58323F2AD922DBC514 /* FileShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3738BDA3DFADA218838328FF /* FileShareService.swift */; };
+		CAFB6C1A7C3467E86DB35BC3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD4E039FB5EA6005AD0423C /* Models.swift */; };
+		CC5AEE892399FF296EB6D727 /* CloudTunnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF25000FAAF0D5CB6569C8 /* CloudTunnelApp.swift */; };
+		D5F0397E87942F5C992AE26B /* DockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84AE2166C18A35AEDF3315 /* DockerView.swift */; };
+		DD7F64574FA8FCCA3755B758 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F994E158923BD20CECD4F169 /* SettingsView.swift */; };
+		F24333853D4B13DF2D26AC9E /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B25D553228914734846E6FF /* DesignSystem.swift */; };
+		FC1F201FBA8DC963FB08D6B0 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD317D0694DDE82333B5140 /* DashboardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B25D553228914734846E6FF /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		2C0524F073C4D369B94D8CF6 /* MAMPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMPView.swift; sourceTree = "<group>"; };
+		3738BDA3DFADA218838328FF /* FileShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShareService.swift; sourceTree = "<group>"; };
+		3ABE6029537B1FA4610E04F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		56BF25000FAAF0D5CB6569C8 /* CloudTunnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTunnelApp.swift; sourceTree = "<group>"; };
+		5952DAD1DA4178A978E6CC6E /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		5F39723EC31F31C07069536B /* TunnelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelListView.swift; sourceTree = "<group>"; };
+		6553D3584B9A277A4A0235D7 /* FileShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShareView.swift; sourceTree = "<group>"; };
+		68CA685449D1AFBCCFA8B039 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6CD461DD6E8179DBD20883AE /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		6DDC9B8CEC3A45A9FF6518C4 /* CloudTunnel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudTunnel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		737D89240F81A6F8ED37311A /* CloudTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudTunnel.entitlements; sourceTree = "<group>"; };
+		843DDFD676680EB50C2D92FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DAEE5B0AF4C02D5BB49F934 /* DockerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerService.swift; sourceTree = "<group>"; };
+		A2C5CA064A78FB7134F65677 /* BackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupService.swift; sourceTree = "<group>"; };
+		AB47723C78999A199F2ADBE7 /* QuickTunnelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTunnelView.swift; sourceTree = "<group>"; };
+		B02CA9018C77040ACF6811A5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C39607BAB5979638986B6237 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		C6A7BE68B98410B363E61250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C89EF3B7D88A4199DF65E0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CCD4E039FB5EA6005AD0423C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D8A2FD7FE2A83209F72FE214 /* TunnelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelService.swift; sourceTree = "<group>"; };
+		DDD317D0694DDE82333B5140 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		E77D662DDCC1B9BDA754CD98 /* MAMPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMPService.swift; sourceTree = "<group>"; };
+		F7E5BF808EB674E628620DCA /* PortService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortService.swift; sourceTree = "<group>"; };
+		F994E158923BD20CECD4F169 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA84AE2166C18A35AEDF3315 /* DockerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerView.swift; sourceTree = "<group>"; };
+		FEC2919D90A3AD30C4E9CECF /* CreateTunnelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTunnelView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1F1680D6AC3B0A7838622DEE /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				DDD317D0694DDE82333B5140 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		2734DA59041FC18C7B7EB91C /* Tunnels */ = {
+			isa = PBXGroup;
+			children = (
+				FEC2919D90A3AD30C4E9CECF /* CreateTunnelView.swift */,
+				5F39723EC31F31C07069536B /* TunnelListView.swift */,
+			);
+			path = Tunnels;
+			sourceTree = "<group>";
+		};
+		2EA5B52B7BEA6CBA6220F96C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6DDC9B8CEC3A45A9FF6518C4 /* CloudTunnel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		579F171DE7D8308FE7AFD288 /* QuickTunnel */ = {
+			isa = PBXGroup;
+			children = (
+				AB47723C78999A199F2ADBE7 /* QuickTunnelView.swift */,
+			);
+			path = QuickTunnel;
+			sourceTree = "<group>";
+		};
+		82C1E9E4D0FEA2A2116DC328 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F994E158923BD20CECD4F169 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		82D0A2915CD43632DC5413D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F1680D6AC3B0A7838622DEE /* Dashboard */,
+				DFCE8830B25CB53B77AB5AEA /* Docker */,
+				B27B53BF406594025D1F3B91 /* FileShare */,
+				A93E18ADEF18A58064E35EF5 /* History */,
+				9F33AB57A5A63AE70BF7006E /* MAMP */,
+				579F171DE7D8308FE7AFD288 /* QuickTunnel */,
+				82C1E9E4D0FEA2A2116DC328 /* Settings */,
+				8CF5ABBB55626CC97A3E6A77 /* Sidebar */,
+				2734DA59041FC18C7B7EB91C /* Tunnels */,
+				3ABE6029537B1FA4610E04F5 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8CF5ABBB55626CC97A3E6A77 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				C39607BAB5979638986B6237 /* SidebarView.swift */,
+			);
+			path = Sidebar;
+			sourceTree = "<group>";
+		};
+		90611B0025D734E5485707D6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1B25D553228914734846E6FF /* DesignSystem.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9D849C1643A91713D564AA3A /* CloudTunnel */ = {
+			isa = PBXGroup;
+			children = (
+				E07E7C2F6C824F1E0A278810 /* App */,
+				90611B0025D734E5485707D6 /* Core */,
+				EFF4C1F2FBDDBA66BE647703 /* Models */,
+				DD4E014E3121529763C0F9E0 /* Resources */,
+				C44044823993F928E8B9E30E /* Services */,
+				82D0A2915CD43632DC5413D9 /* Views */,
+				843DDFD676680EB50C2D92FA /* Assets.xcassets */,
+				737D89240F81A6F8ED37311A /* CloudTunnel.entitlements */,
+				C89EF3B7D88A4199DF65E0F9 /* Info.plist */,
+			);
+			path = CloudTunnel;
+			sourceTree = "<group>";
+		};
+		9F33AB57A5A63AE70BF7006E /* MAMP */ = {
+			isa = PBXGroup;
+			children = (
+				2C0524F073C4D369B94D8CF6 /* MAMPView.swift */,
+			);
+			path = MAMP;
+			sourceTree = "<group>";
+		};
+		A93E18ADEF18A58064E35EF5 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				6CD461DD6E8179DBD20883AE /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		B27B53BF406594025D1F3B91 /* FileShare */ = {
+			isa = PBXGroup;
+			children = (
+				6553D3584B9A277A4A0235D7 /* FileShareView.swift */,
+			);
+			path = FileShare;
+			sourceTree = "<group>";
+		};
+		B569061C0AF97EC1E0B72B9A = {
+			isa = PBXGroup;
+			children = (
+				9D849C1643A91713D564AA3A /* CloudTunnel */,
+				2EA5B52B7BEA6CBA6220F96C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C44044823993F928E8B9E30E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A2C5CA064A78FB7134F65677 /* BackupService.swift */,
+				9DAEE5B0AF4C02D5BB49F934 /* DockerService.swift */,
+				3738BDA3DFADA218838328FF /* FileShareService.swift */,
+				5952DAD1DA4178A978E6CC6E /* HistoryService.swift */,
+				E77D662DDCC1B9BDA754CD98 /* MAMPService.swift */,
+				B02CA9018C77040ACF6811A5 /* NetworkService.swift */,
+				F7E5BF808EB674E628620DCA /* PortService.swift */,
+				D8A2FD7FE2A83209F72FE214 /* TunnelService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DD4E014E3121529763C0F9E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				473049950E7E7DFC1758BC15 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DFCE8830B25CB53B77AB5AEA /* Docker */ = {
+			isa = PBXGroup;
+			children = (
+				FA84AE2166C18A35AEDF3315 /* DockerView.swift */,
+			);
+			path = Docker;
+			sourceTree = "<group>";
+		};
+		E07E7C2F6C824F1E0A278810 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				56BF25000FAAF0D5CB6569C8 /* CloudTunnelApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EFF4C1F2FBDDBA66BE647703 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCD4E039FB5EA6005AD0423C /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4816D38CAB9F450D03F22B15 /* CloudTunnel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F795F333D337937AA70FB53C /* Build configuration list for PBXNativeTarget "CloudTunnel" */;
+			buildPhases = (
+				156291A44CCCC0DE9E22E01E /* Sources */,
+				D4DBCD7172E7A02E24F18FFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudTunnel;
+			packageProductDependencies = (
+			);
+			productName = CloudTunnel;
+			productReference = 6DDC9B8CEC3A45A9FF6518C4 /* CloudTunnel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		536E09B9EFE95CCA860302BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4816D38CAB9F450D03F22B15 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 47063B74261590329AC33CAB /* Build configuration list for PBXProject "CloudTunnel" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				tr,
+			);
+			mainGroup = B569061C0AF97EC1E0B72B9A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4816D38CAB9F450D03F22B15 /* CloudTunnel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4DBCD7172E7A02E24F18FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AE4524930C55709FA843D20 /* Assets.xcassets in Resources */,
+				6B25A26C473AE824756AB40A /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		156291A44CCCC0DE9E22E01E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE2E9F9FDC60371E29EBEDB /* BackupService.swift in Sources */,
+				CC5AEE892399FF296EB6D727 /* CloudTunnelApp.swift in Sources */,
+				A1C977714D5720CD282A752C /* ContentView.swift in Sources */,
+				8D33432E5BD1C9AEE9A63F40 /* CreateTunnelView.swift in Sources */,
+				FC1F201FBA8DC963FB08D6B0 /* DashboardView.swift in Sources */,
+				F24333853D4B13DF2D26AC9E /* DesignSystem.swift in Sources */,
+				31C7F69085F326A62D285613 /* DockerService.swift in Sources */,
+				D5F0397E87942F5C992AE26B /* DockerView.swift in Sources */,
+				B0FB4C58323F2AD922DBC514 /* FileShareService.swift in Sources */,
+				2E697796D10F80912F59DE48 /* FileShareView.swift in Sources */,
+				7CB4F275288E0AE4A23FB556 /* HistoryService.swift in Sources */,
+				17D88A3ACA39F74BCC41B294 /* HistoryView.swift in Sources */,
+				9AC2D6B8BDF297EA537F30F1 /* MAMPService.swift in Sources */,
+				AA723337ADFBABDA66221DEC /* MAMPView.swift in Sources */,
+				CAFB6C1A7C3467E86DB35BC3 /* Models.swift in Sources */,
+				1FE45F761E90CA445BEEDF48 /* NetworkService.swift in Sources */,
+				A3CDCB4FD4CC0453A2B2698E /* PortService.swift in Sources */,
+				5862C61F7398FD38367EA0AA /* QuickTunnelView.swift in Sources */,
+				DD7F64574FA8FCCA3755B758 /* SettingsView.swift in Sources */,
+				6F9DF0A2C1E4DA15AF1365AD /* SidebarView.swift in Sources */,
+				9CB957F258B727C1CB70AB6F /* TunnelListView.swift in Sources */,
+				12A508FA1D456E3A16641AE0 /* TunnelService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		473049950E7E7DFC1758BC15 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6A7BE68B98410B363E61250 /* en */,
+				68CA685449D1AFBCCFA8B039 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0A8FF65346FAB236E2E27587 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudTunnel/CloudTunnel.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = CloudTunnel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adilemre.CloudTunnel;
+				PRODUCT_NAME = CloudTunnel;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		19A60E1B7CFE8EEF9D461B51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		75A7B48B83A12A255C707444 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		8FE192C24F942FF76DD221B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudTunnel/CloudTunnel.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = CloudTunnel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adilemre.CloudTunnel;
+				PRODUCT_NAME = CloudTunnel;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47063B74261590329AC33CAB /* Build configuration list for PBXProject "CloudTunnel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A60E1B7CFE8EEF9D461B51 /* Debug */,
+				75A7B48B83A12A255C707444 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F795F333D337937AA70FB53C /* Build configuration list for PBXNativeTarget "CloudTunnel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE192C24F942FF76DD221B4 /* Debug */,
+				0A8FF65346FAB236E2E27587 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 536E09B9EFE95CCA860302BD /* Project object */;
+}
