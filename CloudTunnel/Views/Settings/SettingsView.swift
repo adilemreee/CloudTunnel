@@ -2,6 +2,7 @@
 // Comprehensive settings with tabbed interface
 
 import SwiftUI
+import ServiceManagement
 
 struct SettingsView: View {
     @EnvironmentObject var tunnelService: TunnelService
@@ -138,6 +139,24 @@ struct SettingsView: View {
                 }
             }
             
+            // Launch at Login
+            settingsGroup(title: "Sistem Başlangıcı") {
+                Toggle("Sistem açılınca uygulamayı otomatik başlat", isOn: Binding(
+                    get: { SMAppService.mainApp.status == .enabled },
+                    set: { newValue in
+                        do {
+                            if newValue {
+                                try SMAppService.mainApp.register()
+                            } else {
+                                try SMAppService.mainApp.unregister()
+                            }
+                        } catch {
+                            print("Launch at login error: \(error)")
+                        }
+                    }
+                ))
+            }
+
             // Auto-Start
             settingsGroup(title: NSLocalizedString("settings.autoStart", comment: "")) {
                 Toggle(NSLocalizedString("settings.autoStartTunnels", comment: ""), isOn: $tunnelService.autoStartTunnels)

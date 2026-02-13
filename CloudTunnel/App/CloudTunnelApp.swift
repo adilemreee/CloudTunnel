@@ -2,6 +2,7 @@
 // Modern windowed macOS application for Cloudflare tunnel management
 
 import SwiftUI
+import ServiceManagement
 
 @main
 struct CloudTunnelApp: App {
