@@ -389,7 +389,7 @@ struct ActiveTunnelCard: View {
             CTIconBadge(icon: tunnel.tunnelProtocol.icon, color: CTColors.success, size: 36)
             
             VStack(alignment: .leading, spacing: 3) {
-                Text(tunnel.name)
+                Text(tunnel.displayName)
                     .font(CTTypography.headline)
                     .foregroundStyle(CTColors.textPrimary)
                 

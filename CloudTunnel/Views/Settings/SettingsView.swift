@@ -145,6 +145,9 @@ struct SettingsView: View {
             settingsGroup(title: NSLocalizedString("settings.checkInterval", comment: "")) {
                 VStack(alignment: .leading, spacing: 4) {
                     Slider(value: $tunnelService.checkInterval, in: 5...300, step: 5)
+                        .onChange(of: tunnelService.checkInterval) { _ in
+                            tunnelService.restartStatusMonitor()
+                        }
                     Text("\(Int(tunnelService.checkInterval))s")
                         .font(CTTypography.mono)
                         .foregroundStyle(CTColors.textSecondary)
@@ -233,6 +236,11 @@ struct SettingsView: View {
             
             settingsGroup(title: NSLocalizedString("settings.notifSettings", comment: "")) {
                 Toggle(NSLocalizedString("settings.enableNotif", comment: ""), isOn: $notificationsEnabled)
+                    .onChange(of: notificationsEnabled) { enabled in
+                        if enabled {
+                            NotificationHelper.requestPermission()
+                        }
+                    }
                 
                 if notificationsEnabled {
                     Divider()
@@ -264,6 +272,9 @@ struct SettingsView: View {
                 }
                 
                 Toggle(NSLocalizedString("backup.auto", comment: ""), isOn: $backupService.autoBackup)
+                    .onChange(of: backupService.autoBackup) { _ in
+                        backupService.updateAutoBackup()
+                    }
             }
             
             // Backup List

@@ -384,12 +384,14 @@ final class TunnelService: ObservableObject {
             managedTunnels[index].pid = process.processIdentifier
             managedTunnels[index].lastStarted = Date()
             HistoryService.shared.log(.info, .tunnel, "Tunnel '\(tunnel.name)' started (PID: \(process.processIdentifier))")
+            NotificationHelper.send(title: "Tünel Başlatıldı", body: "'\(tunnel.displayName)' başarıyla başlatıldı.", category: .tunnelStarted)
             
             // Read output in background
             readProcessOutput(outputPipe, tunnelName: tunnel.name)
         } catch {
             managedTunnels[index].status = .error
             HistoryService.shared.log(.error, .tunnel, "Failed to start '\(tunnel.name)': \(error.localizedDescription)")
+            NotificationHelper.send(title: "Tünel Hatası", body: "'\(tunnel.displayName)' başlatılamadı: \(error.localizedDescription)", category: .error)
         }
     }
     
@@ -407,6 +409,7 @@ final class TunnelService: ObservableObject {
         managedTunnels[index].status = .stopped
         managedTunnels[index].pid = nil
         HistoryService.shared.log(.info, .tunnel, "Tunnel '\(tunnel.name)' stopped")
+        NotificationHelper.send(title: "Tünel Durduruldu", body: "'\(tunnel.displayName)' durduruldu.", category: .tunnelStopped)
     }
     
     func startAllTunnels() async {
@@ -678,11 +681,17 @@ ingress:
     
     // MARK: - Status Monitor
     private func startStatusMonitor() {
+        statusTimer?.invalidate()
         statusTimer = Timer.scheduledTimer(withTimeInterval: checkInterval, repeats: true) { [weak self] _ in
             Task { @MainActor in
                 self?.checkProcessStatus()
             }
         }
+    }
+    
+    /// Call this when checkInterval changes to restart the timer
+    func restartStatusMonitor() {
+        startStatusMonitor()
     }
     
     private func checkProcessStatus() {

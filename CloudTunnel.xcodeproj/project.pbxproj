@@ -14,12 +14,15 @@
 		2E697796D10F80912F59DE48 /* FileShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6553D3584B9A277A4A0235D7 /* FileShareView.swift */; };
 		31C7F69085F326A62D285613 /* DockerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAEE5B0AF4C02D5BB49F934 /* DockerService.swift */; };
 		3AE2E9F9FDC60371E29EBEDB /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C5CA064A78FB7134F65677 /* BackupService.swift */; };
+		55E569058B055DACAB56F6D5 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3057A5252EF2107A6C3DAC5B /* NotificationHelper.swift */; };
+		5707A6461543C7E29333A69D /* DomainMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92EBD6E67E7E6A251EA138A /* DomainMigrationService.swift */; };
 		5862C61F7398FD38367EA0AA /* QuickTunnelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47723C78999A199F2ADBE7 /* QuickTunnelView.swift */; };
 		6B25A26C473AE824756AB40A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 473049950E7E7DFC1758BC15 /* Localizable.strings */; };
 		6F9DF0A2C1E4DA15AF1365AD /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39607BAB5979638986B6237 /* SidebarView.swift */; };
 		7CB4F275288E0AE4A23FB556 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952DAD1DA4178A978E6CC6E /* HistoryService.swift */; };
 		8D33432E5BD1C9AEE9A63F40 /* CreateTunnelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC2919D90A3AD30C4E9CECF /* CreateTunnelView.swift */; };
 		9AC2D6B8BDF297EA537F30F1 /* MAMPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77D662DDCC1B9BDA754CD98 /* MAMPService.swift */; };
+		9BAF0D9F9995B7330D730E43 /* DomainMigrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47875A363138E54B590724EC /* DomainMigrationView.swift */; };
 		9CB957F258B727C1CB70AB6F /* TunnelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F39723EC31F31C07069536B /* TunnelListView.swift */; };
 		A1C977714D5720CD282A752C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABE6029537B1FA4610E04F5 /* ContentView.swift */; };
 		A3CDCB4FD4CC0453A2B2698E /* PortService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5BF808EB674E628620DCA /* PortService.swift */; };
@@ -36,8 +39,10 @@
 /* Begin PBXFileReference section */
 		1B25D553228914734846E6FF /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		2C0524F073C4D369B94D8CF6 /* MAMPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMPView.swift; sourceTree = "<group>"; };
+		3057A5252EF2107A6C3DAC5B /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		3738BDA3DFADA218838328FF /* FileShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShareService.swift; sourceTree = "<group>"; };
 		3ABE6029537B1FA4610E04F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		47875A363138E54B590724EC /* DomainMigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainMigrationView.swift; sourceTree = "<group>"; };
 		56BF25000FAAF0D5CB6569C8 /* CloudTunnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTunnelApp.swift; sourceTree = "<group>"; };
 		5952DAD1DA4178A978E6CC6E /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
 		5F39723EC31F31C07069536B /* TunnelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelListView.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 		DDD317D0694DDE82333B5140 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		E77D662DDCC1B9BDA754CD98 /* MAMPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMPService.swift; sourceTree = "<group>"; };
 		F7E5BF808EB674E628620DCA /* PortService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortService.swift; sourceTree = "<group>"; };
+		F92EBD6E67E7E6A251EA138A /* DomainMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainMigrationService.swift; sourceTree = "<group>"; };
 		F994E158923BD20CECD4F169 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA84AE2166C18A35AEDF3315 /* DockerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerView.swift; sourceTree = "<group>"; };
 		FEC2919D90A3AD30C4E9CECF /* CreateTunnelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTunnelView.swift; sourceTree = "<group>"; };
@@ -90,6 +96,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3BC241995F9C28EB6EF9D323 /* DomainMigration */ = {
+			isa = PBXGroup;
+			children = (
+				47875A363138E54B590724EC /* DomainMigrationView.swift */,
+			);
+			path = DomainMigration;
+			sourceTree = "<group>";
+		};
 		579F171DE7D8308FE7AFD288 /* QuickTunnel */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +125,7 @@
 			children = (
 				1F1680D6AC3B0A7838622DEE /* Dashboard */,
 				DFCE8830B25CB53B77AB5AEA /* Docker */,
+				3BC241995F9C28EB6EF9D323 /* DomainMigration */,
 				B27B53BF406594025D1F3B91 /* FileShare */,
 				A93E18ADEF18A58064E35EF5 /* History */,
 				9F33AB57A5A63AE70BF7006E /* MAMP */,
@@ -192,10 +207,12 @@
 			children = (
 				A2C5CA064A78FB7134F65677 /* BackupService.swift */,
 				9DAEE5B0AF4C02D5BB49F934 /* DockerService.swift */,
+				F92EBD6E67E7E6A251EA138A /* DomainMigrationService.swift */,
 				3738BDA3DFADA218838328FF /* FileShareService.swift */,
 				5952DAD1DA4178A978E6CC6E /* HistoryService.swift */,
 				E77D662DDCC1B9BDA754CD98 /* MAMPService.swift */,
 				B02CA9018C77040ACF6811A5 /* NetworkService.swift */,
+				3057A5252EF2107A6C3DAC5B /* NotificationHelper.swift */,
 				F7E5BF808EB674E628620DCA /* PortService.swift */,
 				D8A2FD7FE2A83209F72FE214 /* TunnelService.swift */,
 			);
@@ -315,6 +332,8 @@
 				F24333853D4B13DF2D26AC9E /* DesignSystem.swift in Sources */,
 				31C7F69085F326A62D285613 /* DockerService.swift in Sources */,
 				D5F0397E87942F5C992AE26B /* DockerView.swift in Sources */,
+				5707A6461543C7E29333A69D /* DomainMigrationService.swift in Sources */,
+				9BAF0D9F9995B7330D730E43 /* DomainMigrationView.swift in Sources */,
 				B0FB4C58323F2AD922DBC514 /* FileShareService.swift in Sources */,
 				2E697796D10F80912F59DE48 /* FileShareView.swift in Sources */,
 				7CB4F275288E0AE4A23FB556 /* HistoryService.swift in Sources */,
@@ -323,6 +342,7 @@
 				AA723337ADFBABDA66221DEC /* MAMPView.swift in Sources */,
 				CAFB6C1A7C3467E86DB35BC3 /* Models.swift in Sources */,
 				1FE45F761E90CA445BEEDF48 /* NetworkService.swift in Sources */,
+				55E569058B055DACAB56F6D5 /* NotificationHelper.swift in Sources */,
 				A3CDCB4FD4CC0453A2B2698E /* PortService.swift in Sources */,
 				5862C61F7398FD38367EA0AA /* QuickTunnelView.swift in Sources */,
 				DD7F64574FA8FCCA3755B758 /* SettingsView.swift in Sources */,

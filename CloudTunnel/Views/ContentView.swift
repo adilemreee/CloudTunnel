@@ -41,6 +41,8 @@ struct ContentView: View {
             MAMPView()
         case .fileShare:
             FileShareView()
+        case .domainMigration:
+            DomainMigrationView()
         case .history:
             HistoryView()
         case .settings:

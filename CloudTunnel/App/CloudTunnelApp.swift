@@ -25,6 +25,11 @@ struct CloudTunnelApp: App {
                 .environmentObject(backupService)
                 .frame(minWidth: 960, minHeight: 640)
                 .background(Color(nsColor: .windowBackgroundColor))
+                .onAppear {
+                    if UserDefaults.standard.bool(forKey: "notificationsEnabled") {
+                        NotificationHelper.requestPermission()
+                    }
+                }
         }
         .windowStyle(.titleBar)
         .windowToolbarStyle(.unified(showsTitle: false))

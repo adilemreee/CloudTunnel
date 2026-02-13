@@ -333,6 +333,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
     case docker
     case mamp
     case fileShare
+    case domainMigration
     case history
     case settings
     
@@ -340,27 +341,29 @@ enum NavigationItem: String, CaseIterable, Identifiable {
     
     var title: String {
         switch self {
-        case .dashboard:   NSLocalizedString("nav.dashboard", comment: "")
-        case .tunnels:     NSLocalizedString("nav.tunnels", comment: "")
-        case .quickTunnel: NSLocalizedString("nav.quickTunnel", comment: "")
-        case .docker:      NSLocalizedString("nav.docker", comment: "")
-        case .mamp:        NSLocalizedString("nav.mamp", comment: "")
-        case .fileShare:   NSLocalizedString("nav.fileShare", comment: "")
-        case .history:     NSLocalizedString("nav.history", comment: "")
-        case .settings:    NSLocalizedString("nav.settings", comment: "")
+        case .dashboard:       NSLocalizedString("nav.dashboard", comment: "")
+        case .tunnels:         NSLocalizedString("nav.tunnels", comment: "")
+        case .quickTunnel:     NSLocalizedString("nav.quickTunnel", comment: "")
+        case .docker:          NSLocalizedString("nav.docker", comment: "")
+        case .mamp:            NSLocalizedString("nav.mamp", comment: "")
+        case .fileShare:       NSLocalizedString("nav.fileShare", comment: "")
+        case .domainMigration: "Domain Yönetimi"
+        case .history:         NSLocalizedString("nav.history", comment: "")
+        case .settings:        NSLocalizedString("nav.settings", comment: "")
         }
     }
     
     var icon: String {
         switch self {
-        case .dashboard:   "square.grid.2x2"
-        case .tunnels:     "point.3.connected.trianglepath.dotted"
-        case .quickTunnel: "bolt.horizontal"
-        case .docker:      "shippingbox"
-        case .mamp:        "server.rack"
-        case .fileShare:   "folder.badge.person.crop"
-        case .history:     "clock.arrow.circlepath"
-        case .settings:    "gearshape"
+        case .dashboard:       "square.grid.2x2"
+        case .tunnels:         "point.3.connected.trianglepath.dotted"
+        case .quickTunnel:     "bolt.horizontal"
+        case .docker:          "shippingbox"
+        case .mamp:            "server.rack"
+        case .fileShare:       "folder.badge.person.crop"
+        case .domainMigration: "arrow.triangle.2.circlepath"
+        case .history:         "clock.arrow.circlepath"
+        case .settings:        "gearshape"
         }
     }
     
@@ -369,7 +372,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .dashboard:   .main
         case .tunnels, .quickTunnel: .tunnels
         case .docker, .mamp, .fileShare: .services
-        case .history, .settings: .system
+        case .domainMigration, .history, .settings: .system
         }
     }
     

@@ -25,6 +25,14 @@ final class BackupService: ObservableObject {
         if autoBackup { startAutoBackup() }
     }
     
+    /// Call when user toggles auto-backup on/off or changes interval
+    func updateAutoBackup() {
+        stopAutoBackup()
+        if autoBackup {
+            startAutoBackup()
+        }
+    }
+    
     // MARK: - Create Backup
     func createBackup(name: String? = nil) async throws -> BackupFile {
         isProcessing = true
@@ -232,10 +240,16 @@ final class BackupService: ObservableObject {
     
     // MARK: - Auto Backup
     private func startAutoBackup() {
+        autoBackupTimer?.invalidate()
         autoBackupTimer = Timer.scheduledTimer(withTimeInterval: autoBackupInterval * 3600, repeats: true) { [weak self] _ in
             Task { @MainActor in
                 _ = try? await self?.createBackup(name: "auto_backup")
             }
         }
+    }
+    
+    private func stopAutoBackup() {
+        autoBackupTimer?.invalidate()
+        autoBackupTimer = nil
     }
 }

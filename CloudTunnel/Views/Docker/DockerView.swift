@@ -9,8 +9,15 @@ struct DockerView: View {
     
     @State private var searchText = ""
     @State private var selectedContainer: DockerContainer? = nil
-    @State private var showCreateTunnel = false
+    @State private var sheetItem: DockerTunnelSheetItem? = nil
     @State private var selectedPort: DockerContainer.PortMapping? = nil
+    
+    /// Identifiable wrapper for the sheet
+    struct DockerTunnelSheetItem: Identifiable {
+        let id = UUID()
+        let container: DockerContainer
+        let port: DockerContainer.PortMapping?
+    }
     
     var filteredContainers: [DockerContainer] {
         if searchText.isEmpty { return dockerService.containers }
@@ -73,11 +80,16 @@ struct DockerView: View {
             }
         }
         .background(Color(nsColor: .windowBackgroundColor))
-        .sheet(isPresented: $showCreateTunnel) {
-            if let container = selectedContainer {
-                CreateFromDockerSheet(container: container, selectedPort: selectedPort)
-                    .frame(minWidth: 480, minHeight: 400)
-            }
+        .sheet(item: $sheetItem) { item in
+            CreateFromDockerSheet(container: item.container, selectedPort: item.port)
+                .environmentObject(tunnelService)
+                .frame(minWidth: 480, minHeight: 400)
+        }
+        .onAppear {
+            dockerService.startAutoRefresh()
+        }
+        .onDisappear {
+            dockerService.stopAutoRefresh()
         }
     }
     
@@ -189,7 +201,9 @@ struct DockerView: View {
                                 
                                 CTButton(NSLocalizedString("docker.createTunnel", comment: ""), icon: "plus", style: .primary) {
                                     selectedPort = port
-                                    showCreateTunnel = true
+                                    if let c = selectedContainer {
+                                        sheetItem = DockerTunnelSheetItem(container: c, port: port)
+                                    }
                                 }
                             }
                             .padding(CTSpacing.md)
@@ -204,7 +218,7 @@ struct DockerView: View {
                 // Create Tunnel Button (no ports)
                 if container.ports.isEmpty && container.isRunning {
                     CTButton(NSLocalizedString("docker.createTunnel", comment: ""), icon: "point.3.connected.trianglepath.dotted", style: .primary) {
-                        showCreateTunnel = true
+                        sheetItem = DockerTunnelSheetItem(container: container, port: nil)
                     }
                 }
             }
@@ -359,10 +373,12 @@ struct CreateFromDockerSheet: View {
         
         Task {
             do {
-                _ = try await tunnelService.createTunnel(
+                let tunnel = try await tunnelService.createTunnel(
                     name: tunnelName, hostname: hostname,
                     port: portNum, protocol: .http, source: .docker
                 )
+                // Auto-start the tunnel
+                await tunnelService.startTunnel(tunnel)
                 dismiss()
             } catch {
                 errorMessage = error.localizedDescription

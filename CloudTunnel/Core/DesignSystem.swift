@@ -5,10 +5,23 @@ import SwiftUI
 
 // MARK: - Color Palette
 struct CTColors {
-    // Brand
-    static let brand = Color(hex: "4285FC")
-    static let brandLight = Color(hex: "6BA1FF")
-    static let brandDark = Color(hex: "2A6BE0")
+    // Brand (dynamic - reads from user's accent color preference)
+    static var brand: Color {
+        let index = UserDefaults.standard.integer(forKey: "accentColorIndex")
+        let palette: [Color] = [
+            Color(hex: "4285FC"), // Blue
+            Color(hex: "7B61FF"), // Purple
+            Color(hex: "FF6B9D"), // Pink
+            Color(hex: "FF3B30"), // Red
+            Color(hex: "FF9F0A"), // Orange
+            Color(hex: "34C759"), // Green
+            Color(hex: "5AC8FA"), // Teal
+            Color(hex: "5856D6"), // Indigo
+        ]
+        return index < palette.count ? palette[index] : palette[0]
+    }
+    static var brandLight: Color { brand.opacity(0.7) }
+    static var brandDark: Color { brand.opacity(1.0) }
     
     // Semantic
     static let success = Color(hex: "34C759")
@@ -17,10 +30,12 @@ struct CTColors {
     static let info = Color(hex: "5AC8FA")
     
     // Gradients
-    static let brandGradient = LinearGradient(
-        colors: [Color(hex: "4285FC"), Color(hex: "7B61FF")],
-        startPoint: .topLeading, endPoint: .bottomTrailing
-    )
+    static var brandGradient: LinearGradient {
+        LinearGradient(
+            colors: [brand, brand.opacity(0.7)],
+            startPoint: .topLeading, endPoint: .bottomTrailing
+        )
+    }
     static let successGradient = LinearGradient(
         colors: [Color(hex: "34C759"), Color(hex: "30D158")],
         startPoint: .topLeading, endPoint: .bottomTrailing
@@ -42,11 +57,11 @@ struct CTColors {
         startPoint: .top, endPoint: .bottom
     )
     
-    // Surface Colors (adaptive)
+    // Surface Colors (adaptive - using system colors as fallback)
     struct Surface {
-        static let primary = Color("SurfacePrimary", bundle: nil)
-        static let secondary = Color("SurfaceSecondary", bundle: nil)
-        static let elevated = Color("SurfaceElevated", bundle: nil)
+        static let primary = Color(nsColor: .windowBackgroundColor)
+        static let secondary = Color(nsColor: .controlBackgroundColor)
+        static let elevated = Color(nsColor: .underPageBackgroundColor)
     }
     
     // Sidebar
