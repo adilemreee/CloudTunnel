@@ -69,39 +69,28 @@ struct ContentView: View {
     @ViewBuilder
     var toolbarContent: some View {
         // Network status
-        HStack(spacing: 6) {
+        HStack(spacing: 5) {
             Image(systemName: networkService.isConnected ? networkIcon : "wifi.slash")
-                .font(.system(size: 11, weight: .semibold))
+                .font(.system(size: 12, weight: .medium))
                 .foregroundStyle(networkService.isConnected ? CTColors.success : CTColors.danger)
-                .frame(width: 16)
             
             Text(networkService.isConnected ? networkService.connectionType : "Çevrimdışı")
                 .font(.system(size: 11, weight: .medium))
-                .foregroundStyle(networkService.isConnected ? CTColors.textPrimary : CTColors.danger)
+                .foregroundStyle(CTColors.textSecondary)
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 5)
-        .background(
-            RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .fill(networkService.isConnected ? CTColors.success.opacity(0.08) : CTColors.danger.opacity(0.08))
-        )
         
         Divider()
         
         // Running tunnels badge
         if tunnelService.totalRunning > 0 {
             HStack(spacing: 4) {
-                Image(systemName: "bolt.horizontal.fill")
-                    .font(.system(size: 10))
-                    .foregroundStyle(CTColors.success)
-                Text("\(tunnelService.totalRunning) active")
-                    .font(CTTypography.captionBold)
+                Circle()
+                    .fill(CTColors.success)
+                    .frame(width: 7, height: 7)
+                Text("\(tunnelService.totalRunning) aktif")
+                    .font(.system(size: 11, weight: .semibold))
                     .foregroundStyle(CTColors.success)
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 5)
-            .background(CTColors.success.opacity(0.1))
-            .clipShape(Capsule())
         }
     }
 }
