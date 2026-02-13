@@ -75,6 +75,7 @@ struct ManagedTunnel: Identifiable, Codable, Hashable {
     var createdAt: Date
     var lastStarted: Date?
     var source: TunnelSource
+    var isFavorite: Bool = false
     
     enum TunnelSource: String, Codable, Hashable {
         case manual, docker, mamp
@@ -333,6 +334,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
     case docker
     case mamp
     case fileShare
+    case teamSharing
     case domainMigration
     case history
     case settings
@@ -347,6 +349,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .docker:          NSLocalizedString("nav.docker", comment: "")
         case .mamp:            NSLocalizedString("nav.mamp", comment: "")
         case .fileShare:       NSLocalizedString("nav.fileShare", comment: "")
+        case .teamSharing:     "Takım Paylaşımı"
         case .domainMigration: "Domain Yönetimi"
         case .history:         NSLocalizedString("nav.history", comment: "")
         case .settings:        NSLocalizedString("nav.settings", comment: "")
@@ -361,6 +364,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .docker:          "shippingbox"
         case .mamp:            "server.rack"
         case .fileShare:       "folder.badge.person.crop"
+        case .teamSharing:     "person.3"
         case .domainMigration: "arrow.triangle.2.circlepath"
         case .history:         "clock.arrow.circlepath"
         case .settings:        "gearshape"
@@ -372,7 +376,7 @@ enum NavigationItem: String, CaseIterable, Identifiable {
         case .dashboard:   .main
         case .tunnels, .quickTunnel: .tunnels
         case .docker, .mamp, .fileShare: .services
-        case .domainMigration, .history, .settings: .system
+        case .teamSharing, .domainMigration, .history, .settings: .system
         }
     }
     

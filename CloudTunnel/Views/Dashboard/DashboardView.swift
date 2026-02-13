@@ -20,6 +20,11 @@ struct DashboardView: View {
                 // Stats Grid
                 statsGrid
                 
+                // Favorites
+                if !tunnelService.favoriteTunnels.isEmpty {
+                    favoritesTunnels
+                }
+                
                 // Environment & Quick Actions
                 HStack(alignment: .top, spacing: CTSpacing.lg) {
                     environmentStatus
@@ -67,6 +72,86 @@ struct DashboardView: View {
             }
             .buttonStyle(.plain)
         }
+    }
+    
+    // MARK: - Favorites
+    var favoritesTunnels: some View {
+        VStack(alignment: .leading, spacing: CTSpacing.md) {
+            CTSectionHeader(
+                title: "⭐ Favori Tüneller",
+                subtitle: "\(tunnelService.favoriteTunnels.count) sabitlenmiş"
+            )
+            
+            LazyVGrid(columns: [
+                GridItem(.flexible()),
+                GridItem(.flexible())
+            ], spacing: CTSpacing.md) {
+                ForEach(tunnelService.favoriteTunnels) { tunnel in
+                    HStack(spacing: CTSpacing.md) {
+                        CTIconBadge(
+                            icon: tunnel.tunnelProtocol.icon,
+                            color: tunnel.status.color,
+                            size: 36
+                        )
+                        
+                        VStack(alignment: .leading, spacing: 3) {
+                            HStack(spacing: 4) {
+                                Image(systemName: "star.fill")
+                                    .font(.system(size: 9))
+                                    .foregroundStyle(CTColors.warning)
+                                Text(tunnel.displayName)
+                                    .font(CTTypography.headline)
+                                    .foregroundStyle(CTColors.textPrimary)
+                            }
+                            
+                            Text("\(tunnel.hostname.isEmpty ? "localhost" : tunnel.hostname):\(tunnel.port)")
+                                .font(CTTypography.monoSmall)
+                                .foregroundStyle(CTColors.textSecondary)
+                        }
+                        
+                        Spacer()
+                        
+                        CTStatusBadge(status: tunnel.status)
+                        
+                        if tunnel.status == .running {
+                            Button {
+                                Task { await tunnelService.stopTunnel(tunnel) }
+                            } label: {
+                                Image(systemName: "stop.fill")
+                                    .font(.system(size: 10))
+                                    .foregroundStyle(CTColors.danger)
+                                    .frame(width: 26, height: 26)
+                                    .background(CTColors.danger.opacity(0.1))
+                                    .clipShape(Circle())
+                            }
+                            .buttonStyle(.plain)
+                        } else if tunnel.status == .stopped {
+                            Button {
+                                Task { await tunnelService.startTunnel(tunnel) }
+                            } label: {
+                                Image(systemName: "play.fill")
+                                    .font(.system(size: 10))
+                                    .foregroundStyle(CTColors.success)
+                                    .frame(width: 26, height: 26)
+                                    .background(CTColors.success.opacity(0.1))
+                                    .clipShape(Circle())
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(CTSpacing.md)
+                    .background(
+                        RoundedRectangle(cornerRadius: CTRadius.md, style: .continuous)
+                            .fill(CTColors.warning.opacity(0.04))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: CTRadius.md, style: .continuous)
+                                    .stroke(CTColors.warning.opacity(0.15), lineWidth: 1)
+                            )
+                    )
+                }
+            }
+        }
+        .ctCard()
     }
     
     // MARK: - Stats Grid

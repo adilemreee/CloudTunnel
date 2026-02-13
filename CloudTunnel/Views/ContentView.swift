@@ -18,6 +18,10 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .navigationSplitViewStyle(.balanced)
+        .withTouchBar()
+        .onReceive(NotificationCenter.default.publisher(for: .navigateToQuickTunnel)) { _ in
+            selectedItem = .quickTunnel
+        }
         .toolbar {
             ToolbarItemGroup(placement: .automatic) {
                 toolbarContent
@@ -43,6 +47,8 @@ struct ContentView: View {
             FileShareView()
         case .domainMigration:
             DomainMigrationView()
+        case .teamSharing:
+            TeamSharingView()
         case .history:
             HistoryView()
         case .settings:

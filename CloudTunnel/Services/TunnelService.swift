@@ -272,6 +272,7 @@ final class TunnelService: ObservableObject {
             await MainActor.run {
                 self.managedTunnels = foundTunnels
                 self.isScanning = false
+                self.restoreFavorites()
                 HistoryService.shared.log(.info, .tunnel, "Scanned \(foundTunnels.count) config files")
             }
         }
@@ -743,6 +744,52 @@ ingress:
                 }
             }
         }
+    }
+    
+    // MARK: - Favorites
+    @AppStorage("favoriteTunnelIDs") private var favoriteTunnelIDsData: Data = Data()
+    
+    private var favoriteTunnelIDs: Set<String> {
+        get {
+            (try? JSONDecoder().decode(Set<String>.self, from: favoriteTunnelIDsData)) ?? []
+        }
+        set {
+            favoriteTunnelIDsData = (try? JSONEncoder().encode(newValue)) ?? Data()
+        }
+    }
+    
+    func toggleFavorite(_ tunnel: ManagedTunnel) {
+        guard let index = managedTunnels.firstIndex(where: { $0.id == tunnel.id }) else { return }
+        managedTunnels[index].isFavorite.toggle()
+        
+        var ids = favoriteTunnelIDs
+        let key = tunnel.tunnelUUID.isEmpty ? tunnel.configPath : tunnel.tunnelUUID
+        if managedTunnels[index].isFavorite {
+            ids.insert(key)
+        } else {
+            ids.remove(key)
+        }
+        favoriteTunnelIDs = ids
+    }
+    
+    private func restoreFavorites() {
+        let ids = favoriteTunnelIDs
+        for i in managedTunnels.indices {
+            let key = managedTunnels[i].tunnelUUID.isEmpty ? managedTunnels[i].configPath : managedTunnels[i].tunnelUUID
+            managedTunnels[i].isFavorite = ids.contains(key)
+        }
+    }
+    
+    /// Tunnels sorted with favorites first
+    var sortedTunnels: [ManagedTunnel] {
+        managedTunnels.sorted { a, b in
+            if a.isFavorite != b.isFavorite { return a.isFavorite }
+            return a.displayName.localizedCaseInsensitiveCompare(b.displayName) == .orderedAscending
+        }
+    }
+    
+    var favoriteTunnels: [ManagedTunnel] {
+        managedTunnels.filter { $0.isFavorite }
     }
     
     // MARK: - Stats

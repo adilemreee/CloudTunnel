@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FA035ADBDB4BBBB3A101DD4 /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561348F4A44B98FC123FAF4 /* TouchBarController.swift */; };
 		12A508FA1D456E3A16641AE0 /* TunnelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2FD7FE2A83209F72FE214 /* TunnelService.swift */; };
 		17D88A3ACA39F74BCC41B294 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD461DD6E8179DBD20883AE /* HistoryView.swift */; };
 		1FE45F761E90CA445BEEDF48 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CA9018C77040ACF6811A5 /* NetworkService.swift */; };
@@ -31,13 +32,16 @@
 		CAFB6C1A7C3467E86DB35BC3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD4E039FB5EA6005AD0423C /* Models.swift */; };
 		CC5AEE892399FF296EB6D727 /* CloudTunnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF25000FAAF0D5CB6569C8 /* CloudTunnelApp.swift */; };
 		D5F0397E87942F5C992AE26B /* DockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84AE2166C18A35AEDF3315 /* DockerView.swift */; };
+		D8EF19170352D6C6E881EC4F /* TeamSharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1679EB740DF53FEA2CB7E75 /* TeamSharingView.swift */; };
 		DD7F64574FA8FCCA3755B758 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F994E158923BD20CECD4F169 /* SettingsView.swift */; };
+		EC097017EBF6F4D9F676B64C /* TeamSharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C680F08450EBC1CD48C77DE /* TeamSharingService.swift */; };
 		F24333853D4B13DF2D26AC9E /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B25D553228914734846E6FF /* DesignSystem.swift */; };
 		FC1F201FBA8DC963FB08D6B0 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD317D0694DDE82333B5140 /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B25D553228914734846E6FF /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		2561348F4A44B98FC123FAF4 /* TouchBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarController.swift; sourceTree = "<group>"; };
 		2C0524F073C4D369B94D8CF6 /* MAMPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMPView.swift; sourceTree = "<group>"; };
 		3057A5252EF2107A6C3DAC5B /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		3738BDA3DFADA218838328FF /* FileShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShareService.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 		47875A363138E54B590724EC /* DomainMigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainMigrationView.swift; sourceTree = "<group>"; };
 		56BF25000FAAF0D5CB6569C8 /* CloudTunnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTunnelApp.swift; sourceTree = "<group>"; };
 		5952DAD1DA4178A978E6CC6E /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		5C680F08450EBC1CD48C77DE /* TeamSharingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSharingService.swift; sourceTree = "<group>"; };
 		5F39723EC31F31C07069536B /* TunnelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunnelListView.swift; sourceTree = "<group>"; };
 		6553D3584B9A277A4A0235D7 /* FileShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileShareView.swift; sourceTree = "<group>"; };
 		68CA685449D1AFBCCFA8B039 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 		A2C5CA064A78FB7134F65677 /* BackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupService.swift; sourceTree = "<group>"; };
 		AB47723C78999A199F2ADBE7 /* QuickTunnelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTunnelView.swift; sourceTree = "<group>"; };
 		B02CA9018C77040ACF6811A5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C1679EB740DF53FEA2CB7E75 /* TeamSharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSharingView.swift; sourceTree = "<group>"; };
 		C39607BAB5979638986B6237 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		C6A7BE68B98410B363E61250 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C89EF3B7D88A4199DF65E0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +110,14 @@
 			path = DomainMigration;
 			sourceTree = "<group>";
 		};
+		430735116B5DBCDA9714C25A /* TeamSharing */ = {
+			isa = PBXGroup;
+			children = (
+				C1679EB740DF53FEA2CB7E75 /* TeamSharingView.swift */,
+			);
+			path = TeamSharing;
+			sourceTree = "<group>";
+		};
 		579F171DE7D8308FE7AFD288 /* QuickTunnel */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +146,7 @@
 				579F171DE7D8308FE7AFD288 /* QuickTunnel */,
 				82C1E9E4D0FEA2A2116DC328 /* Settings */,
 				8CF5ABBB55626CC97A3E6A77 /* Sidebar */,
+				430735116B5DBCDA9714C25A /* TeamSharing */,
 				2734DA59041FC18C7B7EB91C /* Tunnels */,
 				3ABE6029537B1FA4610E04F5 /* ContentView.swift */,
 			);
@@ -150,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				1B25D553228914734846E6FF /* DesignSystem.swift */,
+				2561348F4A44B98FC123FAF4 /* TouchBarController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -214,6 +230,7 @@
 				B02CA9018C77040ACF6811A5 /* NetworkService.swift */,
 				3057A5252EF2107A6C3DAC5B /* NotificationHelper.swift */,
 				F7E5BF808EB674E628620DCA /* PortService.swift */,
+				5C680F08450EBC1CD48C77DE /* TeamSharingService.swift */,
 				D8A2FD7FE2A83209F72FE214 /* TunnelService.swift */,
 			);
 			path = Services;
@@ -347,6 +364,9 @@
 				5862C61F7398FD38367EA0AA /* QuickTunnelView.swift in Sources */,
 				DD7F64574FA8FCCA3755B758 /* SettingsView.swift in Sources */,
 				6F9DF0A2C1E4DA15AF1365AD /* SidebarView.swift in Sources */,
+				EC097017EBF6F4D9F676B64C /* TeamSharingService.swift in Sources */,
+				D8EF19170352D6C6E881EC4F /* TeamSharingView.swift in Sources */,
+				0FA035ADBDB4BBBB3A101DD4 /* TouchBarController.swift in Sources */,
 				9CB957F258B727C1CB70AB6F /* TunnelListView.swift in Sources */,
 				12A508FA1D456E3A16641AE0 /* TunnelService.swift in Sources */,
 			);

@@ -11,10 +11,12 @@ struct TunnelListView: View {
     @State private var selectedTunnel: ManagedTunnel? = nil
     @State private var showDeleteAlert = false
     @State private var tunnelToDelete: ManagedTunnel? = nil
+    @State private var filterFavoritesOnly = false
     
     var filteredTunnels: [ManagedTunnel] {
-        tunnelService.managedTunnels.filter { tunnel in
+        tunnelService.sortedTunnels.filter { tunnel in
             if let filter = filterStatus, tunnel.status != filter { return false }
+            if filterFavoritesOnly && !tunnel.isFavorite { return false }
             if !searchText.isEmpty {
                 return tunnel.displayName.localizedCaseInsensitiveContains(searchText) ||
                        tunnel.name.localizedCaseInsensitiveContains(searchText) ||
@@ -54,7 +56,8 @@ struct TunnelListView: View {
                                 onDelete: {
                                     tunnelToDelete = tunnel
                                     showDeleteAlert = true
-                                }
+                                },
+                                onToggleFavorite: { tunnelService.toggleFavorite(tunnel) }
                             )
                         }
                     }
@@ -118,6 +121,26 @@ struct TunnelListView: View {
                 filterChip(.running, title: NSLocalizedString("status.running", comment: ""))
                 filterChip(.stopped, title: NSLocalizedString("status.stopped", comment: ""))
                 filterChip(.error, title: NSLocalizedString("status.error", comment: ""))
+                
+                Divider()
+                    .frame(height: 20)
+                
+                Button {
+                    withAnimation { filterFavoritesOnly.toggle() }
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: filterFavoritesOnly ? "star.fill" : "star")
+                            .font(.system(size: 11))
+                        Text("Favoriler")
+                            .font(CTTypography.captionBold)
+                    }
+                    .foregroundStyle(filterFavoritesOnly ? .white : CTColors.warning)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(filterFavoritesOnly ? CTColors.warning : CTColors.warning.opacity(0.12))
+                    .clipShape(Capsule())
+                }
+                .buttonStyle(.plain)
             }
         }
         .padding(CTSpacing.lg)
@@ -147,6 +170,7 @@ struct TunnelRow: View {
     let onStart: () -> Void
     let onStop: () -> Void
     let onDelete: () -> Void
+    let onToggleFavorite: () -> Void
     
     @EnvironmentObject var tunnelService: TunnelService
     @State private var isHovered = false
@@ -201,6 +225,15 @@ struct TunnelRow: View {
                 
                 // Status Badge
                 CTStatusBadge(status: tunnel.status)
+                
+                // Favorite button
+                Button(action: onToggleFavorite) {
+                    Image(systemName: tunnel.isFavorite ? "star.fill" : "star")
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundStyle(tunnel.isFavorite ? CTColors.warning : CTColors.textTertiary)
+                        .frame(width: 30, height: 30)
+                }
+                .buttonStyle(.plain)
                 
                 // Actions
                 HStack(spacing: CTSpacing.xs) {
