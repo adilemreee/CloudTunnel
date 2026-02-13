@@ -7,16 +7,6 @@ struct ContentView: View {
     @State private var selectedItem: NavigationItem = .dashboard
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
     @EnvironmentObject var tunnelService: TunnelService
-    @EnvironmentObject var networkService: NetworkService
-    
-    private var networkIcon: String {
-        switch networkService.connectionType {
-        case "Wi-Fi":    return "wifi"
-        case "Ethernet": return "cable.connector"
-        case "Cellular": return "antenna.radiowaves.left.and.right"
-        default:         return "network"
-        }
-    }
     
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
@@ -30,11 +20,6 @@ struct ContentView: View {
         .withTouchBar()
         .onReceive(NotificationCenter.default.publisher(for: .navigateToQuickTunnel)) { _ in
             selectedItem = .quickTunnel
-        }
-        .toolbar {
-            ToolbarItemGroup(placement: .automatic) {
-                toolbarContent
-            }
         }
     }
     
@@ -62,35 +47,6 @@ struct ContentView: View {
             HistoryView()
         case .settings:
             SettingsView()
-        }
-    }
-    
-    // MARK: - Toolbar
-    @ViewBuilder
-    var toolbarContent: some View {
-        // Network status
-        HStack(spacing: 5) {
-            Image(systemName: networkService.isConnected ? networkIcon : "wifi.slash")
-                .font(.system(size: 12, weight: .medium))
-                .foregroundStyle(networkService.isConnected ? CTColors.success : CTColors.danger)
-            
-            Text(networkService.isConnected ? networkService.connectionType : "Çevrimdışı")
-                .font(.system(size: 11, weight: .medium))
-                .foregroundStyle(CTColors.textSecondary)
-        }
-        
-        Divider()
-        
-        // Running tunnels badge
-        if tunnelService.totalRunning > 0 {
-            HStack(spacing: 4) {
-                Circle()
-                    .fill(CTColors.success)
-                    .frame(width: 7, height: 7)
-                Text("\(tunnelService.totalRunning) aktif")
-                    .font(.system(size: 11, weight: .semibold))
-                    .foregroundStyle(CTColors.success)
-            }
         }
     }
 }

@@ -8,6 +8,7 @@ struct SidebarView: View {
     @EnvironmentObject var tunnelService: TunnelService
     @EnvironmentObject var dockerService: DockerService
     @EnvironmentObject var historyService: HistoryService
+    @EnvironmentObject var networkService: NetworkService
     
     var body: some View {
         VStack(spacing: 0) {
@@ -164,25 +165,64 @@ struct SidebarView: View {
         VStack(spacing: CTSpacing.sm) {
             Divider()
             
-            HStack(spacing: CTSpacing.sm) {
-                Circle()
-                    .fill(tunnelService.cloudflaredInstalled ? CTColors.success : CTColors.danger)
-                    .frame(width: 8, height: 8)
-                
-                VStack(alignment: .leading, spacing: 1) {
-                    Text("cloudflared")
-                        .font(CTTypography.captionBold)
-                        .foregroundStyle(CTColors.textPrimary)
+            // Active tunnels
+            if tunnelService.totalRunning > 0 {
+                HStack(spacing: CTSpacing.sm) {
+                    Circle()
+                        .fill(CTColors.success)
+                        .frame(width: 7, height: 7)
                     
-                    Text(tunnelService.cloudflaredInstalled
-                         ? (tunnelService.cloudflaredVersion ?? "Installed")
-                         : "Not Found")
-                        .font(CTTypography.caption)
-                        .foregroundStyle(CTColors.textTertiary)
+                    Text("\(tunnelService.totalRunning) aktif tünel")
+                        .font(CTTypography.captionBold)
+                        .foregroundStyle(CTColors.success)
+                    
+                    Spacer()
                 }
+                .padding(.bottom, 2)
+            }
+            
+            // Network
+            HStack(spacing: CTSpacing.sm) {
+                Image(systemName: networkService.isConnected ? networkIcon : "wifi.slash")
+                    .font(.system(size: 11))
+                    .foregroundStyle(networkService.isConnected ? CTColors.success : CTColors.danger)
+                    .frame(width: 14)
+                
+                Text(networkService.isConnected ? networkService.connectionType : "Çevrimdışı")
+                    .font(CTTypography.caption)
+                    .foregroundStyle(CTColors.textTertiary)
                 
                 Spacer()
             }
+            .padding(.bottom, 2)
+            
+            // cloudflared
+            HStack(spacing: CTSpacing.sm) {
+                Circle()
+                    .fill(tunnelService.cloudflaredInstalled ? CTColors.success : CTColors.danger)
+                    .frame(width: 7, height: 7)
+                
+                Text("cloudflared")
+                    .font(CTTypography.caption)
+                    .foregroundStyle(CTColors.textTertiary)
+                
+                Spacer()
+                
+                Text(tunnelService.cloudflaredInstalled
+                     ? (tunnelService.cloudflaredVersion ?? "✓")
+                     : "✗")
+                    .font(CTTypography.caption)
+                    .foregroundStyle(CTColors.textTertiary)
+            }
+        }
+    }
+    
+    private var networkIcon: String {
+        switch networkService.connectionType {
+        case "Wi-Fi":    return "wifi"
+        case "Ethernet": return "cable.connector"
+        case "Cellular": return "antenna.radiowaves.left.and.right"
+        default:         return "network"
         }
     }
 }

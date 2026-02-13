@@ -32,7 +32,6 @@ struct CloudTunnelApp: App {
                 }
         }
         .windowStyle(.titleBar)
-        .windowToolbarStyle(.unified(showsTitle: false))
         .defaultSize(width: 1120, height: 720)
         
         Settings {
