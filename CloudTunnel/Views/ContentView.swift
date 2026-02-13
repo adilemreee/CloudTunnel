@@ -9,6 +9,15 @@ struct ContentView: View {
     @EnvironmentObject var tunnelService: TunnelService
     @EnvironmentObject var networkService: NetworkService
     
+    private var networkIcon: String {
+        switch networkService.connectionType {
+        case "Wi-Fi":    return "wifi"
+        case "Ethernet": return "cable.connector"
+        case "Cellular": return "antenna.radiowaves.left.and.right"
+        default:         return "network"
+        }
+    }
+    
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             SidebarView(selectedItem: $selectedItem)
@@ -61,18 +70,21 @@ struct ContentView: View {
     var toolbarContent: some View {
         // Network status
         HStack(spacing: 6) {
-            Circle()
-                .fill(networkService.isConnected ? CTColors.success : CTColors.danger)
-                .frame(width: 8, height: 8)
+            Image(systemName: networkService.isConnected ? networkIcon : "wifi.slash")
+                .font(.system(size: 11, weight: .semibold))
+                .foregroundStyle(networkService.isConnected ? CTColors.success : CTColors.danger)
+                .frame(width: 16)
             
-            Text(networkService.isConnected ? networkService.connectionType : "Offline")
-                .font(CTTypography.caption)
-                .foregroundStyle(CTColors.textSecondary)
+            Text(networkService.isConnected ? networkService.connectionType : "Çevrimdışı")
+                .font(.system(size: 11, weight: .medium))
+                .foregroundStyle(networkService.isConnected ? CTColors.textPrimary : CTColors.danger)
         }
         .padding(.horizontal, 10)
         .padding(.vertical, 5)
-        .background(Color.primary.opacity(0.05))
-        .clipShape(Capsule())
+        .background(
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                .fill(networkService.isConnected ? CTColors.success.opacity(0.08) : CTColors.danger.opacity(0.08))
+        )
         
         Divider()
         
