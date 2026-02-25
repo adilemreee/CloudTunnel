@@ -22,7 +22,7 @@ final class MenuBarManager: ObservableObject {
     // MARK: - Setup
     
     private func setupStatusItem() {
-        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         
         if let button = statusItem?.button {
             button.image = NSImage(systemSymbolName: "cloud.fill", accessibilityDescription: "CloudTunnel")
@@ -103,12 +103,6 @@ final class MenuBarManager: ObservableObject {
             button.image = NSImage(systemSymbolName: "cloud", accessibilityDescription: "CloudTunnel - Idle")
         }
         button.image?.size = NSSize(width: 18, height: 18)
-        
-        // Badge
-        if runningCount > 0 {
-            statusItem?.button?.title = " \(runningCount)"
-        } else {
-            statusItem?.button?.title = ""
-        }
+        button.title = ""
     }
 }
