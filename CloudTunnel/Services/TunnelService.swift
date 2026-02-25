@@ -416,6 +416,7 @@ final class TunnelService: ObservableObject {
         LiveLogService.shared.unregisterTunnel(tunnel.id)
         managedTunnels[index].status = .stopped
         managedTunnels[index].pid = nil
+        
         HistoryService.shared.log(.info, .tunnel, "Tunnel '\(tunnel.name)' stopped")
         NotificationHelper.send(title: "Tünel Durduruldu", body: "'\(tunnel.displayName)' durduruldu.", category: .tunnelStopped)
     }
