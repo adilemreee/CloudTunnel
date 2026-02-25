@@ -166,13 +166,15 @@ final class PortScannerService: ObservableObject {
         
         let lines = output.components(separatedBy: .newlines)
         for line in lines.dropFirst() { // Skip header
-            let components = line.components(separatedBy: .whitespaces).filter { !$0.isEmpty }
+            let trimmedLine = line.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmedLine.isEmpty else { continue }
+            
+            let components = trimmedLine.components(separatedBy: .whitespaces).filter { !$0.isEmpty }
             guard components.count >= 9 else { continue }
             
             let processName = components[0]
             let pidStr = components[1]
             let user = components[2]
-            let nameField = components.last ?? ""
             
             // Skip system processes
             let lowerProc = processName.lowercased()
@@ -181,10 +183,9 @@ final class PortScannerService: ObservableObject {
                 continue
             }
             
-            // Parse port from name field (e.g., "*:3000" or "127.0.0.1:8080")
-            guard let colonIndex = nameField.lastIndex(of: ":"),
-                  let port = Int(nameField[nameField.index(after: colonIndex)...]),
-                  port > 0 && port < 65536 else {
+            // Parse port from the full line.
+            // `lsof` outputs name as `*:3000 (LISTEN)`, where `(LISTEN)` is the last token.
+            guard let port = Self.parseListeningPort(from: trimmedLine) else {
                 continue
             }
             
@@ -208,6 +209,29 @@ final class PortScannerService: ObservableObject {
         }
         
         return results
+    }
+    
+    nonisolated private static func parseListeningPort(from line: String) -> Int? {
+        let patterns = [
+            #":(\d+)\s+\(LISTEN\)$"#,
+            #":(\d+)$"#
+        ]
+        
+        let nsLine = line as NSString
+        let range = NSRange(location: 0, length: nsLine.length)
+        
+        for pattern in patterns {
+            guard let regex = try? NSRegularExpression(pattern: pattern) else { continue }
+            guard let match = regex.firstMatch(in: line, options: [], range: range),
+                  match.numberOfRanges > 1 else { continue }
+            
+            let portStr = nsLine.substring(with: match.range(at: 1))
+            if let port = Int(portStr), (1..<65536).contains(port) {
+                return port
+            }
+        }
+        
+        return nil
     }
     
     nonisolated private static func getProcessCommand(pid: Int32) -> String {
