@@ -4,8 +4,18 @@
 import SwiftUI
 import ServiceManagement
 
+// MARK: - App Delegate (Menu Bar lifecycle)
+
+class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return false // Keep running in menu bar
+    }
+}
+
 @main
 struct CloudTunnelApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @StateObject private var tunnelService = TunnelService.shared
     @StateObject private var dockerService = DockerService.shared
     @StateObject private var mampService = MAMPService.shared
@@ -14,9 +24,10 @@ struct CloudTunnelApp: App {
     @StateObject private var historyService = HistoryService.shared
     @StateObject private var backupService = BackupService.shared
     @StateObject private var shortcutManager = KeyboardShortcutManager.shared
+    @StateObject private var menuBarManager = MenuBarManager.shared
     
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: "main-window") {
             ContentView()
                 .environmentObject(tunnelService)
                 .environmentObject(dockerService)
